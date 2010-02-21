@@ -5,7 +5,8 @@ using System.IO;
 
 namespace Blog.Specs.MetaWeblog
 {
-    public class when_adding_media:MetaWeblogContext
+    [TestFixture]
+    public class when_adding_media : MetaWeblogContext
     {
         [Test]
         public void should_store_it()
@@ -22,13 +23,21 @@ namespace Blog.Specs.MetaWeblog
         }
     }
 
+    [TestFixture]
     public class when_getting_recent_posts : MetaWeblogContext
     {
         [Test]
-        public void should_not_crash_and_burn()
+        public void should_get_posts()
         {
             var res = _api.GetRecentPosts("1000", "BjartN", "", 50);
             Assert.AreEqual(1,res.Length);
+        }
+
+        [Test]
+        public void categories_should_not_be_null()
+        {
+            var res = _api.GetRecentPosts("1000", "BjartN", "", 50);
+            Assert.IsNotNull(res[0].categories);
         }
     }
 

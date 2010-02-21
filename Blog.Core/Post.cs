@@ -49,7 +49,7 @@ namespace Blog.Core
         public static Post GetPostsBySlug(string slug, IRepository repository)
         {
             return GetPublishedPosts(repository)
-                .Where(x=>x.Slug == slug).SingleOrDefault();
+                .Where(x=>x.Slug == slug.ToLower()).SingleOrDefault();
         }
 
         public static void Save(Post post, IRepository repository)

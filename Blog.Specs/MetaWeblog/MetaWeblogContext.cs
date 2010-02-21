@@ -6,7 +6,6 @@ using NUnit.Framework;
 
 namespace Blog.Specs
 {
-    [TestFixture]
     public abstract class MetaWeblogContext
     {
         protected IRepository _repository;
