@@ -1,0 +1,10 @@
+_ReSharper.*
+*.resharper.user
+*.vcproj.*.user
+*.ncb
+*.aps
+*.suo
+bin
+obj
+Thumbs.db
+*.yap

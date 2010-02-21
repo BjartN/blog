@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="utf-8"?>
+<articles>
+  <article>
+    <url>http://bjarte.com/post/332145494</url>
+    <comments>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>82.196.201.102</ip_address>
+        <message>I listen in my car on my way to work. Not sure about top 5, but some of the best are Herding Code, This Week in Startups and maybe Hanselminutes. It really depends what your interests are, and if you are looking for useful content or entertainment. </message>
+        <date>Thu, 28 Jan 2010 06:26:34 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>zilvinassaltys</name>
+        <email>zilvinas.saltys@gmail.com</email>
+        <url>http://zilvinas.tumblr.com</url>
+        <ip_address>87.194.81.223</ip_address>
+        <message>Thanks for all the podcasts. There's quite a few of them. Blows my mind how you find time for all of them. If you would have to pick best 5 what would it be?
+
+Thanks!</message>
+        <date>Thu, 28 Jan 2010 05:05:44 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>82.196.201.102</ip_address>
+        <message>Yes, I know. It's actually on my list, but I seems to have dropped out somehow :)</message>
+        <date>Fri, 15 Jan 2010 02:49:42 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>No Body</name>
+        <email>nobodybutca@gmail.com</email>
+        <url/>
+        <ip_address>122.53.114.236</ip_address>
+        <message>Thanks for the great links, special for those business podcast thingy.
+
+I would say http://altnetpodcast.com/ though is dormant now. =(
+</message>
+        <date>Thu, 14 Jan 2010 10:20:47 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/220704030</url>
+    <comments>
+      <comment>
+        <name>openid-12097</name>
+        <email/>
+        <url>http://openid.thinkbeforecoding.com/jeremie.chassaing</url>
+        <ip_address>10.16.113.210</ip_address>
+        <message>"If you only keep your current state in your database, how do you know that the data is correct ? Anything could have happened to keep it from being correct, like bugs and evil people :) "
+
+Something even more difficult to track is when the state data is correct but for wrong reasons ! With events, you get the history and the cause of each change.</message>
+        <date>Fri, 23 Oct 2009 05:36:48 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>wesmcclure</name>
+        <email>wes.mcclure@gmail.com</email>
+        <url/>
+        <ip_address>10.16.113.210</ip_address>
+        <message>Yeah, I agree, this seems like an very interesting concept but it also seems like it would be over kill for anything but very large projects.</message>
+        <date>Fri, 23 Oct 2009 10:57:34 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>gilligan_MH</name>
+        <email>gilligan128@gmail.com</email>
+        <url/>
+        <ip_address>66.170.139.146</ip_address>
+        <message>Actually, the architecture has a learning curve, but it has the potential to make your infrastructure vastly simpler. Since you're persistence is only dealing with events, you can say goodbye to ORM issues like fetching strategies, complex queries and value object mappings. It also simplifies your tests. The biggest cost to this architecture is not in the infrastructure but the paradigm shift.</message>
+        <date>Mon, 26 Oct 2009 08:44:32 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/218824299</url>
+    <comments>
+      <comment>
+        <name>twitter-20557619</name>
+        <email/>
+        <url>http://twitter.com/nobodybutca</url>
+        <ip_address>202.175.193.18</ip_address>
+        <message>Finally, I sample code =), been longing for this kind of stuff. Cheers!!! Now I "have some code to look at"</message>
+        <date>Thu, 22 Oct 2009 05:30:35 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>bodrin</name>
+        <email>bodrin@gmail.com</email>
+        <url/>
+        <ip_address>62.213.161.130</ip_address>
+        <message>Hi, nice article! I have two questions:
+
+&gt;Notice we have no “eventId”. We don’t need one.
+
+Obviously there is no global order there. Sometimes you could need this .. I know it is strange and not scalable, but I have had such a strange requirement on a project. So, I suppose you sort the events by datetime when you are replying them, right?
+
+
+&gt;Update the version number in the event provider. The version number is now the previous version number plus the number of events published since previous version.
+
+This way you loose the information about how the events were grouped in transactions, right?
+(On each command corresponds one and only one transaction and a number of events)
+Probably you may not need it since the additive only nature of you store...
+
+--bodrin</message>
+        <date>Mon, 26 Oct 2009 04:30:04 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>213.153.8.29</ip_address>
+        <message>You would store the events in the same order as they are applied, and that way you would keep the ordering. We need to know the order of the events even within each transaction. Depending on your storage system you would need an explicit way of keeping the order correct. In this case keeping an auto incremented event id might not be a bad idea. Good point :)</message>
+        <date>Mon, 26 Oct 2009 06:44:48 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-12097</name>
+        <email/>
+        <url>http://openid.thinkbeforecoding.com/jeremie.chassaing</url>
+        <ip_address>193.251.19.77</ip_address>
+        <message>I'm currently experimenting an implementation of an invent storage with Esent... will blog about that soon and perhaps release is open source if it gives good results.</message>
+        <date>Wed, 21 Oct 2009 04:32:53 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/212693682</url>
+    <comments>
+      <comment>
+        <name>openid-11996</name>
+        <email/>
+        <url>https://me.yahoo.com/a/F7_RTJg5mNhOXIzpzSrXn6rFMiJfyDDYlG4-#9763d</url>
+        <ip_address>38.103.153.242</ip_address>
+        <message>Nice. Could this design benefit from separating the responsibility of publishing the events and loading from history in another class. This way you could avoid having a base class.
+
+I don't know if the ClearChanges methods sits well with the write-only approach.</message>
+        <date>Wed, 14 Oct 2009 10:32:01 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>213.153.8.29</ip_address>
+        <message>To Simon:&lt;br/&gt;
+The ClearChanges method is used by the repository to clear the changes after is has persisted the latest changes to the Event Store. This is to ensure the changes are not persisted twice.  This will not affect the write-only approach. I will go into this when I'm writing the "Event Storage" post. &lt;br&gt;&lt;br&gt;You could move the base class logic into a separate class and use composition instead of inheritance, but in this case it will give you nothing, at least I don't think so. Having a base class like this makes everything flow nicely and the implementation of the child class (the aggregate root) is very clean.</message>
+        <date>Wed, 14 Oct 2009 12:07:28 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-11996</name>
+        <email/>
+        <url>https://me.yahoo.com/a/F7_RTJg5mNhOXIzpzSrXn6rFMiJfyDDYlG4-#9763d</url>
+        <ip_address>38.103.153.242</ip_address>
+        <message>I see your point but why would one hold on to a reference to an aggregate root once its events have been publish. Could this we do away with this if we were to use lambdas to run our commands. 
+
+For example if we use the same patterns that are described in Jeremy Miller's articles on functional programming in MSDN Magazine: 
+
+repository&lt;Customer&gt;.ExecuteCommand(id, c =&gt; c.Order(order));
+
+public class Repository&lt;T&gt;{
+  public void ExecuteCommand(int id, Action&lt;T&gt; action)
+  {
+    var ar = Get(id);
+    action.Invoke(ar);
+    //do some event publishing here
+  }
+}
+
+This way, there no need to clean up the AR since no one holds a reference to it.
+
+By the way I think that doing a series of blog posts on DDDD and CQRS is great.
+
+</message>
+        <date>Wed, 14 Oct 2009 15:16:29 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>twitter-20557619</name>
+        <email/>
+        <url>http://twitter.com/nobodybutca</url>
+        <ip_address>122.53.119.229</ip_address>
+        <message>Bjarte,
+
+Nice post, Greg referred me to this site =).
+I am just a newbie on DDD | CQRS
+
+Can you possibly, post the complete source code?
+
+Thanks.
+
+br,
+No Body
+www.OSM.no</message>
+        <date>Wed, 14 Oct 2009 18:59:05 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>82.196.201.102</ip_address>
+        <message>You keep the aggregate root in memory all the time basically. Having many gigs of ram this is usually no problem. This way you can process A LOT of transactions on a single server. Since you keep your object in memory you need to persist the events, and keep track of what events you have persisted.</message>
+        <date>Thu, 15 Oct 2009 01:59:07 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>82.196.201.102</ip_address>
+        <message>I'm planning to post the source when I get the time to put it together in a presentable manner. Also Mark Nijhof has an upcoming post including source (http://blog.fohjin.com/)
+
+Good to hear that you liked the post :)</message>
+        <date>Thu, 15 Oct 2009 02:02:16 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/263339524</url>
+    <comments>
+      <comment>
+        <name>Torbjørn Marø</name>
+        <email>torbjorn.maro@gmail.com</email>
+        <url>http://blog.kjempekjekt.com/</url>
+        <ip_address>88.89.23.220</ip_address>
+        <message>Well said, I agree with that. It's not very practical though, if you're not willing to gamble a lot on finding such a person. In 99% of the cases you will need to split the responsibilities.
+
+A single goal might also be a bit naive. Most businesses have at least two goals: A) Make money now, and B) make huge amount of money in the future. There are usually lot's of conflicts between the two.</message>
+        <date>Sat, 26 Dec 2009 05:20:16 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>213.153.8.29</ip_address>
+        <message>You need to make trade-offs when you are developing software, and I guess this is what you refer to when are talking about conflicting concerns. These trade-offs are negotiated in context of some goal you want to achieve. This goal is usually related to money somewhere in the system.
+
+Negotiating trade-offs when you have an eye on the target should not be a problem for a person with a stake in the outcome and the knowledge to make informed decisions. If you can find such a person you will make great software.
+
+That said, finding such a person is hard. You will usually find them in start-up companies. Look e.g. at how Google or Microsoft got started.
+
+In companies where the only thing that is motivating you is your pay-check or your narrow field of knowledge, you won't find people that are able to juggle these two roles. I think this is where you need to have two people claiming their ground and battling it out to find a compromise. However this is far from optimal.
+
+Well, that's my opinion :)
+
+</message>
+        <date>Sat, 26 Dec 2009 04:25:41 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>Torbjørn Marø</name>
+        <email>torbjorn.maro@gmail.com</email>
+        <url>http://blog.kjempekjekt.com/</url>
+        <ip_address>85.200.224.138</ip_address>
+        <message>I'm sceptical to combining the two roles you are talking about - the champion and the developer lead. In Microsoft Solutions Framework lingo we would call these roles Product Manager and Program Manager, and according to this framework projects can be severely hurt by combining these two roles. 
+
+The problem is that they represent partly conflicting concerns, and people have usually great difficulty juggling conflicting concerns. What's optimal from the customer's/product's point of view and what's optimal from the technical team's view is never a 100% match (far from it), and you need two people to negotiate a "perfect" middle ground.</message>
+        <date>Wed, 23 Dec 2009 09:02:43 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>twitter-83289720</name>
+        <email/>
+        <url>http://twitter.com/anettebgo</url>
+        <ip_address>150.101.221.117</ip_address>
+        <message>I believe the "strong leader thinking" is a symptom of working in a dysfunctional team. With the constant frustration that comes from such an environment it is easy to start thinking "I could make a better product if I did everything myself" or "If everyone just listened to me..". It is probably true as well, a single brilliant person may well make better stuff than a crappy dysfunctional team. But a brilliant team will always outperform a brilliant person. And a brilliant team works in collaboration, where each person should be able to pick up and put down roles based on skill and need - the visionary, the architect, the coffeerun guy, the joker, the why why why guy, the organiser, the pusher, the one who holds back, the leader, the follower etc..&lt;br&gt;&lt;br&gt;So the short answer: to build remarkable software I believe you first need to build a remarkable team. And that when that team works well it works collectively and you will not need a designated leader.
+
+EDIT: Re-reading your post I see I missed something, specifically "The roles need not be explicit, but they need to be present in the team in some form." Which I suppose is the short form of what I was saying about roles... :)</message>
+        <date>Mon, 30 Nov 2009 19:00:36 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/192488648</url>
+    <comments>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>213.153.8.29</ip_address>
+        <message>No no.. Because I am a ninja, I knew of the bug and exploited it's weakness as the true .NET Ninja I am ;) </message>
+        <date>Sun, 20 Sep 2009 10:44:06 -0000</date>
+        <points>2</points>
+      </comment>
+      <comment>
+        <name>Torbjørn Marø</name>
+        <email>torbjorn.maro@gmail.com</email>
+        <url>http://blog.kjempekjekt.com/</url>
+        <ip_address>88.89.23.220</ip_address>
+        <message>And if you look closely it becomes apparent that you have discovered the only known bug in version 1 of the game (it was fixed about a week ago now, but the download has not yet been updated). Cause you answered csUnit to the last question, while it should have been Unity, meaning that you have "only" reached .Net Guru level! The game always awards you your current level, even if you answered wrong, so it's always one level too high.  
+
+Glad you liked it though :)</message>
+        <date>Sun, 20 Sep 2009 10:27:22 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/224749430</url>
+    <comments>
+      <comment>
+        <name>twitter-85560094</name>
+        <email/>
+        <url>http://twitter.com/dnperfors</url>
+        <ip_address>80.126.134.192</ip_address>
+        <message>What about when you need some Domain specific calculation in your view? Example: I want to add items to an order and when giving discount I want to see the calculated price (using WinForms like application)</message>
+        <date>Tue, 27 Oct 2009 08:48:15 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>213.153.8.29</ip_address>
+        <message>Usually you would enrich your events with that information, or splitting the calculation into a service that you could reuse from different parts of your architecture.</message>
+        <date>Tue, 27 Oct 2009 11:49:27 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>adymitruk</name>
+        <email>adam@dymitruk.com</email>
+        <url>http://www.twitter.com/adymitruk</url>
+        <ip_address>72.25.192.4</ip_address>
+        <message>Adding another user is a validation concern. Only a unique user can be created. This belongs in the domain. The service that coordinates interactions with the domain will have to coordinate the creation of a new user with looking up if the user exists.
+
+The service can hold another domain object called "Reserved User Names". If it's null, it's hydrated from the event store. The look up is done. If it doesn't exist, you create the user, update the object, create the event and store it. This object can be kept in the service so no need to rehydrate all the time.
+
+The interesting part is whether you want to hydrate the "Reserved User Names" object from the same creation sub-set of user events in the event store, or you publish a specific event for the "Reserved User Names" object. The reason that this is interesting is versioning.</message>
+        <date>Tue, 27 Oct 2009 13:41:54 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>Jason_West</name>
+        <email>jason.west@ky.gov</email>
+        <url/>
+        <ip_address>162.114.40.34</ip_address>
+        <message>Great set of posts.
+
+Could I talk you into into a compensating action example for this?
+I see that mentioned a lot an very few examples.
+
+Thanks!</message>
+        <date>Tue, 27 Oct 2009 14:02:58 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>adymitruk</name>
+        <email>adam@dymitruk.com</email>
+        <url>http://www.twitter.com/adymitruk</url>
+        <ip_address>72.25.192.4</ip_address>
+        <message>Agreed with the point about complex or big data structures being an issue. Not sure if moving things that are this important out of the domain is right. Can you give an example of a scenario that would not be doable with what I suggested?</message>
+        <date>Tue, 27 Oct 2009 15:27:22 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>213.153.8.29</ip_address>
+        <message>I think you might run into trouble with this approach when you are doing validation on big data structures. You simply cannot hold everything in memory. Also making domain objects with the sole purpose of holding this kind of data seems a little bit sketchy. You are basically creating an object that is doing exactly what relational databases are designed to do. &lt;br&gt;&lt;br&gt;On the other hand what you are suggesting would probably work in a lot of situations. I guess you need to look at the context to figure out the best approach for a given situation. All models are wrong, but some are useful (todays quote) :)</message>
+        <date>Tue, 27 Oct 2009 14:12:12 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>MarkNijhof</name>
+        <email>mark.nijhof@gmail.com</email>
+        <url/>
+        <ip_address>84.49.159.94</ip_address>
+        <message>You are putting a great series together! Btw I just wanted to let you know that I released the example I am working on at GitHub (http://github.com/MarkNijhof/Fohjin).</message>
+        <date>Tue, 27 Oct 2009 21:16:31 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>213.153.8.29</ip_address>
+        <message>Yes, I noticed on the DDD mailing list :) I'm looking forward to your posts, and also digging deeper into your code base.</message>
+        <date>Wed, 28 Oct 2009 01:30:18 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>213.153.8.29</ip_address>
+        <message>I'm leaving the examples to the domain experts in the given domain :) A compensating action for this might be a CancelUserRegistration command or something like that I guess. It really depends on your context.  </message>
+        <date>Wed, 28 Oct 2009 02:04:00 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>213.153.8.29</ip_address>
+        <message>That would be any example where you have a lot of data you need to do validation against :) I need to meditate on that one ;)</message>
+        <date>Wed, 28 Oct 2009 04:16:22 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-12097</name>
+        <email/>
+        <url>http://openid.thinkbeforecoding.com/jeremie.chassaing</url>
+        <ip_address>193.251.19.77</ip_address>
+        <message>Manual trackback : http://thinkbeforecoding.com/post/2009/10/28/Uniqueness-validation-in-CQRS-Architecture
+</message>
+        <date>Wed, 28 Oct 2009 10:10:20 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-12923</name>
+        <email/>
+        <url>http://jamescrowley.myopenid.com/</url>
+        <ip_address>217.205.102.242</ip_address>
+        <message>In this scenario, could you consider making domain objects available by a unique constraint in addition to your aggregate guid? this way you could check your event storage for the existence of an aggregate with that unique key in your event store, rather than having to rely on the read layer?</message>
+        <date>Tue, 03 Nov 2009 07:53:17 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>213.153.8.29</ip_address>
+        <message>Not sure if I get exactly what you are getting at here. Might just be the case that it is late in the evening :) 
+
+Remember that the set you need to do validation against might not be related to an aggregate root. It could also be an entity within your AR. The uniqueness constraints put on your entities should only be required to be unique within your entity root. If you put broader constraints on your entities that that your are breaking encapsulation as as a result you will have problems scaling. That was just a rant, probably totally unrelated to your question :) Please elaborate with an example if you can :)</message>
+        <date>Tue, 03 Nov 2009 11:37:30 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>Sebastian</name>
+        <email>sebaszipp@gmail.com</email>
+        <url/>
+        <ip_address>200.59.160.18</ip_address>
+        <message>Providing some kind of "undo" event could work: DeletedUserEvent.
+It would be nice to have some guy whose responsability would be monitoring/tracking the domain events distribution and undo those that fail.</message>
+        <date>Thu, 29 Oct 2009 17:20:43 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>Gilligan</name>
+        <email>gilligan128@gmail.com</email>
+        <url/>
+        <ip_address>69.14.144.77</ip_address>
+        <message>I personally would keep a list of UserNames in an "System" Aggregate Root that looks up the usernames in memory. I cannot see this being a problem until you are dealing with 10s of thousands of users at once. At that point I would create a lookup table in a relational db that is updated with the event log synchronously. I would still view this lookup table as part of the domain.</message>
+        <date>Wed, 04 Nov 2009 00:07:39 -0000</date>
+        <points>2</points>
+      </comment>
+      <comment>
+        <name>tomsyd</name>
+        <email>tomsyd1@iinet.net.au</email>
+        <url/>
+        <ip_address>203.42.167.17</ip_address>
+        <message>From what I've read the only place a User exists as a domain concept is in a security related domain, where the user would usually be the aggregate root and you could make the aggregate id the username itself?</message>
+        <date>Tue, 10 Nov 2009 17:40:55 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>82.196.201.102</ip_address>
+        <message>A user is only an example of set based validation. Depending on your domain you might have many other situations that require you to analyse a given set of items.</message>
+        <date>Wed, 11 Nov 2009 01:59:35 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/394350290</url>
+    <comments>
+      <comment>
+        <name>openid-18771</name>
+        <email/>
+        <url>http://michel.grootjans.myopenid.com/</url>
+        <ip_address>81.165.1.192</ip_address>
+        <message>Spot on! Once again: 1 picture can say more than a thousand words.</message>
+        <date>Wed, 17 Feb 2010 14:32:19 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/209983853</url>
+    <comments>
+      <comment>
+        <name>Anders</name>
+        <email>anderssjoberg2002@yahoo.se</email>
+        <url/>
+        <ip_address>83.183.125.28</ip_address>
+        <message>Thank you for your answer! Yes, it answered my questions and I must say I did not expect such an thoroughly answer. Your explanation together with the referenced talk/questioning of Greg Young made it clearer to me. Now I see CQS as an design principle and I guess the upcoming posts on the subject will put it more into an architectual context.</message>
+        <date>Sun, 11 Oct 2009 17:33:43 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/178580883</url>
+    <comments>
+      <comment>
+        <name>BjartN</name>
+        <email>bjartn@gmail.com</email>
+        <url>http://bjarte.com/</url>
+        <ip_address>82.196.201.102</ip_address>
+        <message>I totally agree!</message>
+        <date>Mon, 07 Sep 2009 02:40:34 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/392690675</url>
+    <comments>
+      <comment>
+        <name>MarkNijhof</name>
+        <email>mark.nijhof@gmail.com</email>
+        <url/>
+        <ip_address>62.97.236.4</ip_address>
+        <message>Something else ugly is the actual creation of the ModelBinders.Binders stuff in there. A property should have no side affects. This one has a huge one.</message>
+        <date>Wed, 17 Feb 2010 07:54:12 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>Henning</name>
+        <email>hightowr@hotmail.com</email>
+        <url/>
+        <ip_address>195.159.144.197</ip_address>
+        <message>Hehe, they somehow never seem to stop surprise me.
+It's almost as bad as using reflection to unit test private methods.</message>
+        <date>Tue, 16 Feb 2010 08:51:28 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/190893138</url>
+    <comments>
+      <comment>
+        <name>twitter-83289720</name>
+        <email/>
+        <url>http://twitter.com/anettebgo</url>
+        <ip_address>203.214.67.182</ip_address>
+        <message>hm, I sort of feel like you are talking about me here.. ;) But if it is any consolation, I credit you with making me a better developer. </message>
+        <date>Mon, 19 Oct 2009 06:08:07 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>213.153.8.29</ip_address>
+        <message>Not talking about anybody in particular :) And thank you very much. That comment made my day. :)</message>
+        <date>Mon, 19 Oct 2009 14:07:43 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/342715696</url>
+    <comments>
+      <comment>
+        <name>Torbjørn Marø</name>
+        <email>torbjorn.maro@gmail.com</email>
+        <url>http://blog.kjempekjekt.com/</url>
+        <ip_address>88.89.23.220</ip_address>
+        <message>Very important information by bjarte - couldn't agree more. Infact, when I did a talk in our company kickoff two weeks ago explaining Agile to non-developers I tried to focus on exactly this: FEEDBACK! Feedback makes us produce the Right Thing, and will tell us when we stray from what gives the most value.
+
+In my current job I've actually had some problems getting some of the feedback loops in place. This is mainly because we mostly work on software that is highly technical / has no user interface that makes sense to non-technical people, and that we for the most part are our own customer. I'm trying to figure out how review meetings should be conducted in our company, but I'm not sure I've figured out yet.
+
+The feedback from tests has proved invaluable to us however, and has made a tremendous impact on what we produce. </message>
+        <date>Wed, 20 Jan 2010 04:15:51 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>82.196.201.102</ip_address>
+        <message>The spirit of this post was to focus on the "rapid feedback" part. I could even have left out the loop part, but it's there to indicate that this is an reoccurring thing. 
+
+And, as you point out, some feedback loops are not nested within others. 
+
+Thx for the feedback :)</message>
+        <date>Wed, 20 Jan 2010 02:16:49 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>Vitaly Stakhov</name>
+        <email>vitaly.st@gmail.com</email>
+        <url/>
+        <ip_address>188.163.61.221</ip_address>
+        <message>Some people use the 'nested feedback loop' term rather than 'rapid feedback loop'. As for me that sounds like a little better term. Actually 'rapid nested feedback loop' absorbs advantages of both :)
+
+However process feedback and product feedback don't seem to exist in the same hierarchy (to say that one is _nested_ into another). They're kind of ortogonal to each other.</message>
+        <date>Tue, 19 Jan 2010 17:22:27 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/249397744</url>
+    <comments>
+      <comment>
+        <name>Einar Ingebrigtsen</name>
+        <email>einar@dolittle.com</email>
+        <url>http://www.ingebrigtsen.info/</url>
+        <ip_address>81.167.53.154</ip_address>
+        <message>HTML 5 has some cool features - problem is that they haven't yet decided on the entire standard, and preferred programming model is Javascript. 
+
+So if you're anything like me, it will hardly get appealing at all.  But, combining Silverlight and HTML 5 - that is something that I find more interesting.
+
+One thing is the WebGL extension for the Canvas - with this one gets hardware accelerated 3D graphics in the browser - fits like a glove with the Balder project I'm working on. :)</message>
+        <date>Thu, 19 Nov 2009 02:35:42 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>10.16.113.210</ip_address>
+        <message>I have been developing JavaScript intensive applications for a while now, and I'm actually starting to like the language. Used properly it's a great experience. The problem with JavaScript as with all dynamic languages is that you really need to be structured in your development to ensure the maintainability. That said I really like Silverlight and the statically typed experience.  Still I believe that a open platform solution with javascript and HTML 5 is the future for web applications, helped greatly by Google and their new Chrome OS.</message>
+        <date>Mon, 30 Nov 2009 01:45:47 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>Einar Ingebrigtsen</name>
+        <email>einar@dolittle.com</email>
+        <url>http://www.ingebrigtsen.info/</url>
+        <ip_address>81.167.52.45</ip_address>
+        <message>Javascript has been on my "to-learn" list for quite a while, but I never get the chance in my busy schedule. Dynamic languages is something I find very intriguing, there are lots of potential there. 
+
+Agree with you on the probability of what we'll see more of in the future, open standards are a lot better. I'd really love to see an open standard for a runtime for both dynamic and static languages in the browser. So one could pick the favorite language and have the same possibilities across the languages. I think the main problem with the Javascript platform is that one is locking out quite a few developers that could bring great things to the web if they had their favorite language available. 
+
+I'd love to see people being able to combine Ruby, Objective C and C# for instance in the same application, running on the client inside a browser with HTML 5, WebGL .. :)  </message>
+        <date>Mon, 30 Nov 2009 02:49:37 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/206582009</url>
+    <comments>
+      <comment>
+        <name>Greg Young</name>
+        <email>gregoryyoung1@gmail.com</email>
+        <url/>
+        <ip_address>62.97.206.114</ip_address>
+        <message>Cool to see some posts. One comment, in the diagram the aggregate does not receive commands (it is the commandhandler that maps it to a behavior). And yes examples are always good :)</message>
+        <date>Wed, 07 Oct 2009 10:48:04 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>213.153.8.29</ip_address>
+        <message>My bad. I simplified it.  That might not have been a good idea. Will update the post :)</message>
+        <date>Wed, 07 Oct 2009 12:12:38 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/214540942</url>
+    <comments>
+      <comment>
+        <name>zilvinassaltys</name>
+        <email>zilvinas.saltys@gmail.com</email>
+        <url>http://zilvinas.tumblr.com</url>
+        <ip_address>217.46.148.89</ip_address>
+        <message>I agree. I would not want to introduce DDD and CQRS at a company that does not strongly believe in code quality. One would have to teach other people, make sure that everyone is doing the right thing and fight through resistance because people like the chaos model better, because it doesn't require as much effort, rewards better and at the end when it gets horrible people can just leave the company. One can force it or push it, but then it has to be pushed to the end and change the culture of the company or the code quality might become even worse than it was before.</message>
+        <date>Wed, 28 Oct 2009 05:59:57 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-12097</name>
+        <email/>
+        <url>http://openid.thinkbeforecoding.com/jeremie.chassaing</url>
+        <ip_address>193.251.19.77</ip_address>
+        <message>It makes sense.
+Architecture (like CQ(R)S) can make things less clear to developpers that don't want to try to understand it, because effects (and features) happen in the large scale, by the composition of small parts.
+In chaos model, often in the form of transaction script, all should happen between the start and the end of the method. The distribution of behaviors have a meaning only to those thinking at that level. All other developers will just don't see it and screw it soon.</message>
+        <date>Fri, 16 Oct 2009 05:02:39 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>MarkNijhof</name>
+        <email>mark.nijhof@gmail.com</email>
+        <url/>
+        <ip_address>62.97.236.4</ip_address>
+        <message>I don't completely agree. By not pushing into a new direction you are going to get stuck at where you are. I believe you have to push people (especially Norwegians) but you are going to have to have management backing. Without this there is no real incentive to follow-up. I have seen positive results in a few places (2 of them where Norwegian). The key is business, if you can demonstrate business value in the better design then you can get management on-board, and when you have them you let them appoint you as the person who makes the design decisions (with keeping the business in mind). Then you have to keep following up on the code that gets written, and when you see someone not following your guidance, confront them about it, ask why. If this keeps a problem go with him to management.
+
+Yes I realize that this is not how Norwegians deal with problems, that is why you can virtually not fire anyone (wouldn't it be great if you could fire some people because of bad performance?).
+
+An other problem with Norwegian culture is that developers take any comments on their code as being personal attacks, so always keep saying that it is just code... (I feel an other blog post coming up about this).</message>
+        <date>Mon, 19 Oct 2009 03:09:30 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>213.153.8.29</ip_address>
+        <message>I totally agree. I the post I am describing the edge cases. In situations where you can get management on board by clearly describing the business benefits a world of possibilities opens up. &lt;br&gt;&lt;br&gt;I also agree with the fact that Norwegians don't like negative feedback. Me included :) However I don't think this is only a Norwegian phenomena.
+
+Edit:
+Bad choice of words. What I meant to say was that Norwegians often see constructive criticism as negative feedback... Or something like that :)</message>
+        <date>Mon, 19 Oct 2009 14:04:01 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/216453417</url>
+    <comments>
+      <comment>
+        <name>MarkNijhof</name>
+        <email>mark.nijhof@gmail.com</email>
+        <url/>
+        <ip_address>62.97.236.4</ip_address>
+        <message>Nice interview, they should take a look at www.Vizrt.com (Bergen based) for their rendering to TV.</message>
+        <date>Mon, 19 Oct 2009 02:59:37 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/205812576</url>
+    <comments>
+      <comment>
+        <name>wesmcclure</name>
+        <email>wes.mcclure@gmail.com</email>
+        <url/>
+        <ip_address>71.8.227.34</ip_address>
+        <message>Modeling the entire history of the domain seems to only be valuable if the domain requires it as part of your domain?  I guess the biggest concern with a pattern like this would be how you would effectively deal with different versions of code that have existed at different points along the path.  The report one would generate from 10 releases ago might not be the same if you are reapplying events as you go.  This could certainly have business implications too, how do you suggest dealing with this?
+
+If the the application of an event changes, do you simply create new events and never modify old ones?</message>
+        <date>Thu, 22 Oct 2009 16:45:58 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>10.16.113.210</ip_address>
+        <message>Good question. I answered it with a post :) http://bjarte.com/post/220704030/why-would-you-store-the-entire-history-of-the-domain</message>
+        <date>Fri, 23 Oct 2009 02:15:55 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>Anders</name>
+        <email>anderssjoberg2002@yahoo.se</email>
+        <url/>
+        <ip_address>83.183.125.28</ip_address>
+        <message>Thank you, Brjate! I am looking forward to read your posts on the subject.</message>
+        <date>Fri, 09 Oct 2009 06:51:19 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>Anders</name>
+        <email>anderssjoberg2002@yahoo.se</email>
+        <url/>
+        <ip_address>83.183.125.28</ip_address>
+        <message>Why cannot a single model serve reporting, transactions and searching at the same time? I guess it has something to do with scalability and performance of the application to do. What I have read about CQS this far I have not seen any list of all the benefits of it and I have not yet found the real arguments that I can use to convince the other guys in the team.
+
+
+</message>
+        <date>Sat, 10 Oct 2009 04:44:43 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>213.153.8.29</ip_address>
+        <message>I have tried to answer your question in this post http://bjarte.com/post/209983853/using-the-same-model-for-reporting-and-transactions</message>
+        <date>Sun, 11 Oct 2009 12:40:33 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/323325696</url>
+    <comments>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>82.196.201.102</ip_address>
+        <message>If you easily can get away with always saying "get me an order list for customer x" that is great. Sometimes it is not that easy. Maybe you want to fetch the order with order items as well. And maybe not. The difference is the fetching strategy. Maybe you want to apply a dynamically generated query on top of the fetch. Then you need to look at your query API. Maybe you want to get the orders and update some  logging table in the same transaction. Then you need to look at transactions. Of course you can put each of these cases as an method behind some interface, but suddenly your repository API starts getting pretty ugly. &lt;br&gt;&lt;br&gt;I'm not saying that the best solution is always to work directly with NHibernate. I'm saying in some cases it is worth considering, obviously supported with in-memory database tests. They are pretty fast.&lt;br&gt;&lt;br&gt;Thx for great feedback :)</message>
+        <date>Mon, 11 Jan 2010 02:42:48 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>Henning</name>
+        <email>hightowr@hotmail.com</email>
+        <url/>
+        <ip_address>195.159.144.197</ip_address>
+        <message>I've actually done it both ways.
+
+In my previous project we used Entity framework directly in the business code, and I must say it is quite a nightmare to maintain that code. I'm one step away from refusing to work with it, because its so hard to change and fix bugs.
+
+In my world, the db/orm is an implementation detail. From the business code point of view I do not care how I get the data. I just say, "repo, get me a list of orders for this customer" and voila its there. Writing dataaccess code there would mess everything up, removing the focus from the REAL important stuff, making everything else a pain to work with.
+
+I'd consider not using an abstraction layer only for the simplest and smallest applications, and anything over a 3-4 classes and a table is a good starting point to introduce an abstraction layer. In the case of repositories I'd hardly call that over-engineering, but for other abstractions I'd consider not doing it.</message>
+        <date>Mon, 11 Jan 2010 01:43:30 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>213.153.8.29</ip_address>
+        <message>I agree with all of the above. If I would use an ISession directly or hide it away behind yet another interface,  depends on the situation. If I can create maintainable software that is not hiding away NHibernate behind an interface I will do that. In the end it comes down to the cost of implementing and maintaining the software, not principles. The principles should guide you, but not govern you :) </message>
+        <date>Fri, 08 Jan 2010 16:47:38 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>MarkNijhof</name>
+        <email>mark.nijhof@gmail.com</email>
+        <url/>
+        <ip_address>84.49.159.94</ip_address>
+        <message>Abstraction is not just for being able to change from product x to y, it is also about going from version 1 to 2. Also considering DDD and ORM would you not say that the different Repositories are abstractions, would you rather just provide the ISession to the places that now use the repository? Using an abstraction you decide how and how not to use the dependency. And something that may not apply to NH, but abstracting some external dependency often makes testing easier/possible without needing to go through loop holes.
+
+Speaking of that, say youu drive your design by using tests, then I like to create a interface precisely how I want to use the dependency, the dependency might not exist yet or it might, but I don't want to care to much about that at that time. This becomes important when writing the implementation (abstraction layer) of the interface. When not doing this you might be affected too much by the API of the dependency when designing your own code. Anyway this is not always true, sometimes you need to think about the dependency.
+
+But yes I agree, abstracting for the sake of abstracting is a bad thing.</message>
+        <date>Fri, 08 Jan 2010 16:02:40 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>213.153.8.29</ip_address>
+        <message>Yes, I agree. It always depends. When it comes to readability and testability it makes sense to wrap NHibernate in a simple interface. I've done this in our projects as well. However it is not ALWAYS the right solution, and I guess that is what this little post/rant was about :)</message>
+        <date>Fri, 08 Jan 2010 13:50:28 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>openid-10824</name>
+        <email/>
+        <url>http://bjartn.myopenid.com/</url>
+        <ip_address>213.153.8.29</ip_address>
+        <message>One thing you could be tempted to use outside the persistence layer, is NHibernates query cababilites. Also you want to control the unit of work, but then you would need to put an abstraction on top of NHibernate session, and suddenly your simple abstraction is not so simple anymore. But as my friend Henning suggests, "it depends" :)</message>
+        <date>Fri, 08 Jan 2010 13:45:04 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>Derek Greer</name>
+        <email>dbgreer@gmail.com</email>
+        <url>http://ctrl-shift-b.com/</url>
+        <ip_address>75.138.244.226</ip_address>
+        <message>"What happens when you need other features from NHibernate. Will you add it to the abstraction layer ?"
+
+Are there really many NHibernate features you are likely to use directly from outside the persistence layer?  The only one I recall being discussed is the ability to use IStatelessSession and this is abstracted easily enough if you find you need it.
+
+"NHibernate is already an abstraction on top a relational database. Do you want to add another one ?"
+
+NHibernate is an abstraction of the persistence complexity, but not of implementation.  I think there will be times when your classes need to perform some bit of logic you want to test independent of whether the persistence is working or not.
+
+As far as leaky abstractions, leakiness is only an issue when its not your abstraction you are dealing with.
+
+
+</message>
+        <date>Fri, 08 Jan 2010 13:14:54 -0000</date>
+        <points>1</points>
+      </comment>
+      <comment>
+        <name>Henning</name>
+        <email>hightowr@hotmail.com</email>
+        <url/>
+        <ip_address>195.159.144.197</ip_address>
+        <message>I guess it depends on what your needs are.
+
+On my current project we use the repository pattern, so we don't have any db related code in our business code. We do not however abstract the repositories any further, to wrap NHibernate in another layer. I think this is good enough in most cases, and it is a good practice anyways.
+
+Makes the business code more readable and testable.</message>
+        <date>Fri, 08 Jan 2010 09:11:10 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+  <article>
+    <url>http://bjarte.com/post/228763457</url>
+    <comments>
+      <comment>
+        <name>aslakhellesoy</name>
+        <email>aslak.hellesoy@gmail.com</email>
+        <url/>
+        <ip_address>77.17.220.84</ip_address>
+        <message>Hei Bjarte,
+
+FYI - We're in the process of replacing the Treetop based barser with a much faster Ragel based parser. (It will be at least 100 times faster). Check out the Gherkin gem: http://github.com/aslakhellesoy/gherkin
+
+You're absolutely right that Cuke4Nuke is immature. But it's also rather young - about 2 months old. It will get better with time. Here are the issues we need help with: http://github.com/richardlawrence/Cuke4Nuke/issues
+
+Cheers,
+Aslak</message>
+        <date>Sat, 31 Oct 2009 12:37:08 -0000</date>
+        <points>1</points>
+      </comment>
+    </comments>
+  </article>
+</articles>
