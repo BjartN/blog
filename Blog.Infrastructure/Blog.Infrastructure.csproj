@@ -104,11 +104,9 @@
     <Compile Include="Tumblr\TumblrImport.cs" />
     <Compile Include="Tumblr\Post.cs" />
     <Compile Include="MetaWeblogApi\Entities\BlogInfo.cs" />
-    <Compile Include="MetaWeblogApi\Entities\Category.cs" />
     <Compile Include="MetaWeblogApi\Entities\CategoryInfo.cs" />
     <Compile Include="MetaWeblogApi\Entities\FileData.cs" />
     <Compile Include="MetaWeblogApi\IRpcMetaWeblog.cs" />
-    <Compile Include="MetaWeblogApi\Entities\Enclosure.cs" />
     <Compile Include="MetaWeblogApi\MetaWeblog.cs" />
     <Compile Include="MetaWeblogApi\Entities\Post.cs" />
     <Compile Include="MetaWeblogApi\Entities\Source.cs" />

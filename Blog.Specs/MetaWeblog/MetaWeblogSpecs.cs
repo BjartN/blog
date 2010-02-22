@@ -14,12 +14,12 @@ namespace Blog.Specs.MetaWeblog
             var media = new FileData
             {
                 bits = File.ReadAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "rssicon.png")),
-                name= "rssicon_target.png",
+                name = "rssicon_target.png",
                 type = "image"
             };
 
             var res = _api.NewMediaObject("1000", "BjartN", "", media);
-            Assert.That(File.Exists(Path.Combine(Directory.GetCurrentDirectory(),media.name)), "Media not persisted");
+            Assert.That(File.Exists(Path.Combine(Directory.GetCurrentDirectory(), media.name)), "Media not persisted");
         }
     }
 
@@ -30,7 +30,7 @@ namespace Blog.Specs.MetaWeblog
         public void should_get_posts()
         {
             var res = _api.GetRecentPosts("1000", "BjartN", "", 50);
-            Assert.AreEqual(1,res.Length);
+            Assert.AreEqual(1, res.Length);
         }
 
         [Test]

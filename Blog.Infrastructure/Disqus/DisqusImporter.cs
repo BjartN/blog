@@ -8,7 +8,7 @@ namespace Blog.Infrastructure.Disqus
 {
   public class DisqusImporter
   {
-    private string _fileName;
+    private readonly string _fileName;
 
     public DisqusImporter(string fileName)
     {

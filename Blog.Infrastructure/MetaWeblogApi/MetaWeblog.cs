@@ -20,12 +20,12 @@ namespace Blog.Infrastructure.MetaWeblogApi
             _repository = repository;
             _urlContext = urlContext;
             _authenticationService = authenticationService;
-            _settings = _repository.List<BlogSettings>().Single();
+            _settings = BlogSettings.Get(_repository);
         }
 
         public object EditPost(string postid, string username, string password, Post sourcePost, bool publish)
         {
-            ValidateRequest(username, password);
+            validateRequest(username, password);
 
             var post = Core.Post.GetPost(postid, _repository);
 
@@ -49,7 +49,7 @@ namespace Blog.Infrastructure.MetaWeblogApi
 
         public Post GetPost(string postid, string username, string password)
         {
-            ValidateRequest(username, password);
+            validateRequest(username, password);
 
             var targetPost = new Post();
             var sourcePost = Core.Post.GetPost(postid, _repository);
@@ -68,7 +68,7 @@ namespace Blog.Infrastructure.MetaWeblogApi
 
         public Post[] GetRecentPosts(string blogid, string username, string password, int numberOfPosts)
         {
-            ValidateRequest(username, password);
+            validateRequest(username, password);
 
             var sendPosts = new List<Post>();
             var posts = Core.Post.GetPublishedPosts(_repository).Take(50).ToList();
@@ -99,7 +99,7 @@ namespace Blog.Infrastructure.MetaWeblogApi
 
         public string NewPost(string blogid, string username, string password, Post sourcePost, bool publish)
         {
-            ValidateRequest(username, password);
+            validateRequest(username, password);
 
             var post = Core.Post.CreatePost(
                 sourcePost.title,
@@ -115,7 +115,7 @@ namespace Blog.Infrastructure.MetaWeblogApi
 
         public UrlData NewMediaObject(string blogid, string username, string password, FileData mediaObject)
         {
-            ValidateRequest(username, password);
+            validateRequest(username, password);
 
             var mediaInfo = new UrlData();
 
@@ -136,7 +136,7 @@ namespace Blog.Infrastructure.MetaWeblogApi
         {
             var blogs = new List<BlogInfo>();
 
-            ValidateRequest(username, password);
+            validateRequest(username, password);
 
             var temp = new BlogInfo { url = "", blogid = "0", blogName = _settings.Title };
             blogs.Add(temp);
@@ -146,7 +146,7 @@ namespace Blog.Infrastructure.MetaWeblogApi
 
         public bool DeletePost(string appKey, string postid, string username, string password, bool publish)
         {
-            ValidateRequest(username, password);
+            validateRequest(username, password);
             try
             {
                 Core.Post.Delete(postid, _repository);
@@ -190,7 +190,7 @@ namespace Blog.Infrastructure.MetaWeblogApi
             return absoluteFilePath;
         }
 
-        private void ValidateRequest(string userName, string password)
+        private void validateRequest(string userName, string password)
         {
             if (!_authenticationService.Authenticate(userName, password, false))
             {

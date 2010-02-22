@@ -17,7 +17,6 @@ namespace Blog.Infrastructure.MetaWeblogApi.Entities
         public string title;
 
         public string[] categories;
-        public Enclosure enclosure;
         public string link;
         public string permalink;
         [XmlRpcMember(
