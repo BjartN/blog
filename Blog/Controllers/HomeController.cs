@@ -24,8 +24,8 @@ namespace Blog.Controllers
 
         public ActionResult Reload()
         {
-            //if (!_authorizationService.IsCool())
-            //    return this.RedirectToAction(x => x.Index());
+            if (!_authorizationService.IsCool())
+                return this.RedirectToAction(x => x.Index());
 
             var b = new BlogSettings
             {
