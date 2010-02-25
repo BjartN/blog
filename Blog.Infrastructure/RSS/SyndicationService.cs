@@ -13,10 +13,12 @@ namespace Blog.Infrastructure.RSS
     public class SyndicationService : ISyndicationService
     {
         private readonly IRepository _respository;
+        private readonly IUrlContext _urlContext;
 
-        public SyndicationService(IRepository respository)
+        public SyndicationService(IRepository respository, IUrlContext urlContext)
         {
             _respository = respository;
+            _urlContext = urlContext;
         }
 
         public SyndicationFeed CreateSyndicationFeed()
@@ -28,7 +30,7 @@ namespace Blog.Infrastructure.RSS
             {
                 Title = new TextSyndicationContent(blog.Title),
                 Description = new TextSyndicationContent(blog.Description),
-                Language = CultureInfo.CurrentCulture.Name
+                Language = CultureInfo.CurrentCulture.Name,
             };
 
             var feedItems = new List<SyndicationItem>();
@@ -38,8 +40,9 @@ namespace Blog.Infrastructure.RSS
                 {
                     Title = new TextSyndicationContent(p.Title),
                     Summary = new TextSyndicationContent(p.Body),
-                    PublishDate = new DateTimeOffset(DateTime.Now)//,
-                    //BaseUri =new Uri(p.Url)
+                    PublishDate = new DateTimeOffset(DateTime.Now),
+                    Id = p.Id,
+                    BaseUri = new Uri(_urlContext.GetPostUrl(p))
                 };
 
                 var authInfo = new SyndicationPerson { Name = "Bjarte Djuvik Næss" };
