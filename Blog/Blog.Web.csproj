@@ -108,6 +108,7 @@
     <Content Include="Content\disqus.js" />
     <Content Include="Content\rssicon.png" />
     <Content Include="Content\tweet-this.png" />
+    <Content Include="Error.htm" />
     <Content Include="Global.asax" />
     <Content Include="wlwmanifest.xml" />
     <Content Include="Views\Archive\Index.aspx" />

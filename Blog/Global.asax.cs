@@ -15,7 +15,6 @@ namespace Blog.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.IgnoreRoute("Content/{*pathInfo}");
             routes.IgnoreRoute("Scripts/{*pathInfo}");
-            //routes.IgnoreRoute("wlwmanifest.xml");
 
             routes.IgnoreRoute("{*favicon}", new
             {
