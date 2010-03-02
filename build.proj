@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Test" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-     	
-	<Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+<Project DefaultTargets="Deploy" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
 
   <PropertyGroup>
     <Configuration>Release</Configuration>
@@ -10,6 +10,7 @@
     <ProjectTestDir>Blog\Blog.Tests</ProjectTestDir>
     <ProjectFile>$(ProjectDir)\Blog.Web.csproj</ProjectFile>
     <TestProjectFile>$(ProjectTestDir)\Blog.Tests.csproj</TestProjectFile>
+    <TempFolder>c:\temp</TempFolder>
   </PropertyGroup>
 
   <Target Name="GitGet">
@@ -35,5 +36,9 @@
       Toolpath="C:\Program Files (x86)\NUnit 2.5.3\bin\net-2.0\"
       OutputXmlFile="c:\temp\unittest.xml"
       />
+  </Target>
+
+  <Target Name="Deploy">
+    <Exec Command="aspnet_compiler -nologo -v / -p $(ProjectDir) -u C:\temp\build"/>
   </Target>
 </Project>
