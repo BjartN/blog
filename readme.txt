@@ -1,0 +1,1 @@
+Simple lightweight personal blog
