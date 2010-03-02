@@ -38,7 +38,7 @@
       />
   </Target>
 
-  <Target Name="Deploy">
+  <Target Name="Deploy" DependsOnTargets="Test">
     <Exec Command="aspnet_compiler -nologo -v / -p $(ProjectDir) -u C:\temp\build"/>
   </Target>
 </Project>
