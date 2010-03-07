@@ -1,6 +1,10 @@
+using System;
+using System.IO;
+using System.Web;
 using Autofac.Integration.Web;
 using Blog.Infrastructure.MetaWeblogApi.Entities;
 using CookComputing.XmlRpc;
+using Elmah;
 
 namespace Blog.Infrastructure.MetaWeblogApi
 {
@@ -41,7 +45,15 @@ namespace Blog.Infrastructure.MetaWeblogApi
 
         public BlogInfo[] getUsersBlogs(string appKey, string username, string password)
         {
-            return Inner.GetUsersBlogs(appKey, username, password);
+            try
+            {
+                return Inner.GetUsersBlogs(appKey, username, password);
+            }
+            catch(Exception ex)
+            {  
+                ErrorSignal.FromCurrentContext().Raise(ex);
+                throw;
+            }
         }
 
         public bool deletePost(string appKey, string postid, string username, string password, bool publish)
