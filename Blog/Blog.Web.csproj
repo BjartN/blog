@@ -162,6 +162,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\appSettings.config" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="App_Data\elmah\" />
     <Folder Include="Uploads\" />
   </ItemGroup>
