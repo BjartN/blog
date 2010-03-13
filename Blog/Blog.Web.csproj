@@ -119,6 +119,7 @@
     <Content Include="Content\tweet-this.png" />
     <Content Include="Error.htm" />
     <Content Include="Global.asax" />
+    <Content Include="Uploads\tumblr_kxz6tb5JV41qzl1ms.png" />
     <Content Include="wlwmanifest.xml" />
     <Content Include="Views\Archive\Index.aspx" />
     <Content Include="Views\Post\Tags.ascx" />
@@ -163,9 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\elmah\" />
-    <Folder Include="Uploads\" />
   </ItemGroup>
-
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

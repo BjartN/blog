@@ -48,7 +48,7 @@
         Username="$(FtpUser)"
         Password="$(FtpPassword)"
         LocalDirectory="$(LocalDeployment)"
-        RemoteDirectory="test"
+        RemoteDirectory="blog"
         Recursive="true"
                 />
   </Target>

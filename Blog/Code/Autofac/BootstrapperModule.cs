@@ -19,10 +19,7 @@ namespace Blog.Web
             DefaultConvention.ApplyDefaultConvention(builder, typeof(IRepository).Assembly, typeof(ISyndicationService).Assembly);
 
             builder
-                .Register(x => new Importer(@"C:\Users\BjartN\Documents\Visual Studio 2008\Projects\Blog\Blog.Infrastructure\Tumblr\read.xml"))
-                .SingleInstance();
-            builder
-                .Register(x => new Repository(HttpContext.Current.Server.MapPath("~/App_Data/Db2.yap")))
+                .Register(x => new Repository(HttpContext.Current.Server.MapPath("~/App_Data/Db4o.yap")))
                 .As <IRepository>()
                 .SingleInstance();
         }

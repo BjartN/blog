@@ -30,7 +30,128 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 try {&#13;
 var pageTracker = _gat._getTracker("UA-3276571-4");&#13;
 pageTracker._trackPageview();&#13;
-} catch(err) {}&lt;/script&gt;</tumblelog><posts start="0" total="30"><post id="366838415" url="http://bjarte.com/post/366838415" url-with-slug="http://bjarte.com/post/366838415/code-ownership-and-source-control-in-action" type="regular" date-gmt="2010-02-02 12:09:00 GMT" date="Tue, 02 Feb 2010 13:09:00" unix-timestamp="1265112540" format="html" reblog-key="pTCTiEhv" slug="code-ownership-and-source-control-in-action"><regular-title>Code ownership and source control in action</regular-title><regular-body>&lt;p&gt;We (the team) just had a chat about some ideas we should follow when it comes to source control and code ownership. Here is a short summary.&lt;/p&gt;
+} catch(err) {}&lt;/script&gt;</tumblelog><posts start="0" total="36"><post id="434270222" url="http://bjarte.com/post/434270222" url-with-slug="http://bjarte.com/post/434270222/sometimes-you-are-better-off-without-comments" type="regular" date-gmt="2010-03-08 07:48:00 GMT" date="Mon, 08 Mar 2010 08:48:00" unix-timestamp="1268034480" format="html" reblog-key="3x6pVMai" slug="sometimes-you-are-better-off-without-comments"><regular-title>Sometimes you are better off without comments</regular-title><regular-body>&lt;pre&gt;        /// &amp;lt;summary&amp;gt;
+        /// Gets the constant value.
+        /// &amp;lt;/summary&amp;gt;
+        /// &amp;lt;param name="exp"&amp;gt;The exp.&amp;lt;/param&amp;gt;
+        /// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt;
+        public static object GetConstantValue(this Expression exp){
+           ...
+        }
+&lt;/pre&gt;
+&lt;p&gt;I found this code in an open source project. It kinda looks like a joke, but it&amp;#8217;s not.&lt;/p&gt;</regular-body></post><post id="394350290" url="http://bjarte.com/post/394350290" url-with-slug="http://bjarte.com/post/394350290/spot-dirty-code-without-reading-it" type="regular" date-gmt="2010-02-17 07:43:00 GMT" date="Wed, 17 Feb 2010 08:43:00" unix-timestamp="1266392580" format="html" reblog-key="2G0CRZtp" slug="spot-dirty-code-without-reading-it"><regular-title>Spot dirty code without reading it</regular-title><regular-body>&lt;p&gt;Sometimes you can identify bad code without reading it at all. If you have big arrows forming in your code  you should reconsider your solution. It  usually indicates a high &lt;a&gt;cyclomatic complexity&lt;/a&gt; (i.e unredable code). Can you see the arrow&amp;#160;?&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_kxz6tb5JV41qzl1ms.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img/&gt;&lt;/p&gt;</regular-body></post><post id="392690675" url="http://bjarte.com/post/392690675" url-with-slug="http://bjarte.com/post/392690675/a-little-nasty-one-from-the-belly-of-the-beast" type="regular" date-gmt="2010-02-16 12:47:00 GMT" date="Tue, 16 Feb 2010 13:47:00" unix-timestamp="1266324420" format="html" reblog-key="gejKbfmk" slug="a-little-nasty-one-from-the-belly-of-the-beast"><regular-title>A little nasty one from the belly of the beast</regular-title><regular-body>&lt;p&gt;I was just skimming thru the ASP.NET MVC code and found this little nasty guy.&lt;/p&gt;
+&lt;p&gt;You should never widen your interface to enable unit testing. Doing so is a code smell, and there is (almost) always a better way.&lt;/p&gt;
+&lt;pre class="code"&gt; 
+[SuppressMessage(
+    "Microsoft.Usage", 
+    "CA2227:CollectionPropertiesShouldBeReadOnly",
+    Justification = "Property is settable so that the dictionary can be provided for unit testing purposes.")]
+        protected internal ModelBinderDictionary Binders {
+            get {
+                if (_binders == null) {
+                    _binders = ModelBinders.Binders;
+                }
+                return _binders;
+            }
+            set {
+                _binders = value;
+            }
+        }
+&lt;/pre&gt;</regular-body></post><post id="385212753" url="http://bjarte.com/post/385212753" url-with-slug="http://bjarte.com/post/385212753/linq-for-javascript-in-one-minute" type="regular" date-gmt="2010-02-12 08:10:00 GMT" date="Fri, 12 Feb 2010 09:10:00" unix-timestamp="1265962200" format="html" reblog-key="TeRSwT08" slug="linq-for-javascript-in-one-minute"><regular-title>Linq for javascript in one minute</regular-title><regular-body>&lt;p&gt;I do quite a lot of javascript and C# programming. Linq is one of the greatest things in C# and I was missing it in javascript, so I figured I could just implement what I needed. It took about one minute. Here is how I could improve  some of my code:&lt;/p&gt;
+&lt;pre class="code"&gt;var a =[];
+for (var i = 0; i &amp;lt; elements.length; i++) {
+    a[a.length] = {
+        name: elements[i].name,
+        id: elements[i].id
+    }
+};
+return a;
+
+&lt;/pre&gt;
+&lt;p&gt;becomes&lt;/p&gt;
+&lt;pre class="code"&gt;return elements.select(function(item) {
+    return {
+        Name: item.Name,
+        Id: item.Id
+    };
+});
+
+&lt;/pre&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;pre class="code"&gt;var res = [];
+for (var i = 0; i &amp;lt; ids.length; i++) {
+     for (var j = 0; j &amp;lt; this._currentList.length; j++) {
+           if (ids[i] == this._currentList[j].Id)
+               res[res.length] = this._currentList[j];
+     }
+}
+return res;
+
+&lt;/pre&gt;
+&lt;p&gt;becomes&lt;/p&gt;
+&lt;pre class="code"&gt;return this._currentList.where(function(item) {
+    return ids.contains(item.Id);
+});
+
+
+&lt;/pre&gt;
+&lt;p&gt;The actual implementation I call Blinq (e.g.) Bjarte Linq :p&lt;/p&gt;
+&lt;pre class="code"&gt;if (Array.prototype.where != undefined)
+    throw new Error("Duplicatte method definition on Array");
+
+Array.prototype.where = function(match) {
+    var a = [];
+    for (var i = 0; i &amp;lt; this.length; i++) {
+        if (match(this[i])) {
+            a[a.length] = this[i];
+        }
+    }
+    return a;
+}
+
+if (Array.prototype.select != undefined)
+    throw new Error("Duplicatte method definition on Array");
+
+Array.prototype.select = function(selection) {
+    var a = [];
+    for (var i = 0; i &amp;lt; this.length; i++) {
+        a[a.length] = selection(this[i]);
+    }
+    return a;
+}
+
+if (Array.prototype.contains != undefined)
+    throw new Error("Duplicatte method definition on Array");
+
+Array.prototype.contains = function(obj) {
+    var len = this.length;
+    for (var i = 0; i &amp;lt; len; i++) {
+        if (this[i] === obj) { return true; }
+    }
+    return false;
+};
+
+&lt;/pre&gt;
+&lt;p&gt;Not alot of code really.&lt;/p&gt;
+&lt;p&gt;Nitpickers corner: LINQ-like implementations of Javascript already exists, but when it takes me a minute to implement I don&amp;#8217;t go about learning a new framework to get the job done :)&lt;/p&gt;</regular-body></post><post id="383916513" url="http://bjarte.com/post/383916513" url-with-slug="http://bjarte.com/post/383916513/strongly-typed-action-links-urls-and-redirect-to" type="regular" date-gmt="2010-02-11 16:25:00 GMT" date="Thu, 11 Feb 2010 17:25:00" unix-timestamp="1265905500" format="html" reblog-key="piJOAgOx" slug="strongly-typed-action-links-urls-and-redirect-to"><regular-title>Strongly typed Action Links, URLs and Redirect To Action in ASP.NET MVC 2 RC 2</regular-title><regular-body>&lt;p&gt;This one goes out to all you who are spending valuable time to figure out where the heck you can find these methods:&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;ActionLink and BuildUrlFromExpression you can find in the MVC Futures:&lt;/b&gt;&lt;/p&gt;
+&lt;pre&gt;&amp;lt;%@ Import Namespace="Microsoft.Web.Mvc"%&amp;gt;  
+&amp;lt;% =Html.ActionLink&amp;lt;HomeController&amp;gt;(x =&amp;gt; x.Index(),"Go home") %&amp;gt; 
+&amp;lt;% =Html.BuildUrlFromExpression&amp;lt;HomeController&amp;gt;(x=&amp;gt;x.Index())%&amp;gt; 
+&lt;/pre&gt;
+&lt;p&gt;&lt;b&gt;Strongly typed RedirectToAction you can find in MvcContrib&lt;/b&gt;&lt;/p&gt;
+&lt;pre&gt;using MvcContrib; 
+return this.RedirectToAction(x=&amp;gt;x.Index());
+&lt;/pre&gt;
+&lt;p&gt;You can also read Phil Haacks uber lame exuse for not putting this inside MVC at the end of &lt;a href="http://haacked.com/archive/2008/08/29/how-a-method-becomes-an-action.aspx"&gt;this post&lt;/a&gt;&lt;/p&gt;</regular-body><tag>mvc</tag></post><post id="370208632" url="http://bjarte.com/post/370208632" url-with-slug="http://bjarte.com/post/370208632/apple-and-usablility" type="regular" date-gmt="2010-02-04 07:15:00 GMT" date="Thu, 04 Feb 2010 08:15:00" unix-timestamp="1265267700" format="html" reblog-key="m42oWtpB" slug="apple-and-usablility"><regular-title>Apple and Usablility</regular-title><regular-body>&lt;p&gt;I am very impressed with the user interfaces Apple has on it&amp;#8217;s products like iPod and the iPhone. Apple really do set the standard. Apple does have some really crappy software as well. The one that constantly annoys me is iTunes. But that&amp;#8217;s not a problem Apple. I can forgive you for one mistake. However, what I got this morning when I tried to update my iTunes didn&amp;#8217;t please me at all. As we all know when we get an software update we just press next, next and then we&amp;#8217;re OK. Apple has realized this as well and is deliberately trying to push some software to you that you DO NOT WANT. This is not acceptable.&lt;/p&gt;
+&lt;p&gt;The problem is easy to fix. They could just have left the check-boxes unchecked.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://media.tumblr.com/tumblr_kxb2721znG1qzl1ms.png"/&gt;&lt;/p&gt;
+&lt;p&gt;Obviously I&amp;#8217;m not new to this behaviour. A lot of non-user friendly companies does exactly the same thing. But Apple? Come on. You are supposed to be the usability guys.&lt;/p&gt;
+&lt;p&gt;The way to create great software is to think about the user experience from the users perspective. Nobody wants an extra browser or a mobile-something application installed when they are just updating their software.&lt;/p&gt;
+&lt;p&gt;Hopefully you, my readers, don&amp;#8217;t do this kind of crap to your customers. Or do you&amp;#160;?&lt;/p&gt;
+&lt;p&gt;Later.&lt;/p&gt;</regular-body></post><post id="366838415" url="http://bjarte.com/post/366838415" url-with-slug="http://bjarte.com/post/366838415/code-ownership-and-source-control-in-action" type="regular" date-gmt="2010-02-02 12:09:00 GMT" date="Tue, 02 Feb 2010 13:09:00" unix-timestamp="1265112540" format="html" reblog-key="pTCTiEhv" slug="code-ownership-and-source-control-in-action"><regular-title>Code ownership and source control in action</regular-title><regular-body>&lt;p&gt;We (the team) just had a chat about some ideas we should follow when it comes to source control and code ownership. Here is a short summary.&lt;/p&gt;
 &lt;h4&gt;Code ownership&lt;/h4&gt;
 &lt;p&gt;&amp;#8221;Shared code ownership: &amp;#8221; To ensure that more than one person is familiar with a certain part of the code base we have shared code ownership. This will make the team more flexible, and making change easier. It is always allowed to refactor code to make it better. It is actually required to prevent  the code base from deteriorating over time.  That said, there might be people who knows more about the code base than you do. Also, somebody else might be working with the code right now. &amp;#8221;Consult before making radical change.&amp;#8221; Communication is always important.&lt;/p&gt;
 &lt;h4&gt;Check in&lt;/h4&gt;
