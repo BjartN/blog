@@ -14,8 +14,8 @@
           <SQLDebugging>False</SQLDebugging>
           <PublishCopyOption>RunFiles</PublishCopyOption>
           <PublishTargetLocation>C:\Users\BjartN\Desktop\Blog-publish\</PublishTargetLocation>
-          <PublishDeleteAllFiles>False</PublishDeleteAllFiles>
-          <PublishCopyAppData>True</PublishCopyAppData>
+          <PublishDeleteAllFiles>True</PublishDeleteAllFiles>
+          <PublishCopyAppData>False</PublishCopyAppData>
           <ExternalProgram>
           </ExternalProgram>
           <StartExternalURL>

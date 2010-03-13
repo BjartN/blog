@@ -2,43 +2,74 @@
 <Project DefaultTargets="Deploy" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
-
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.Targets" />
+  <Import Project="C:\WINDOWS\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets"/>
+  
   <PropertyGroup>
     <Configuration>Release</Configuration>
-    <ClassLibraryOutputDirectory>bin\$(Configuration)</ClassLibraryOutputDirectory>
-    <ProjectDir>Blog\Blog</ProjectDir>
-    <ProjectTestDir>Blog\Blog.Tests</ProjectTestDir>
+    <ProjectDir>Blog</ProjectDir>
+    <ProjectTestDir>Blog.Tests</ProjectTestDir>
     <ProjectFile>$(ProjectDir)\Blog.Web.csproj</ProjectFile>
     <TestProjectFile>$(ProjectTestDir)\Blog.Tests.csproj</TestProjectFile>
-    <TempFolder>c:\temp</TempFolder>
+    <SolutionDir>.\</SolutionDir>
+    <LocalDeployment>c:\temp\build</LocalDeployment>
+    <Version>$(BUILD_NUMBER)</Version>
   </PropertyGroup>
 
-  <Target Name="GitGet">
-    <Exec Command="git clone http://github.com/BjartN/Blog.git"></Exec>
+  <Target Name="Builder">
+
+    <Exec Command="RD /S /Q $(LocalDeployment)"  />
+    <MakeDir Directories="@(LocalDeployment)" />
+
+    <!-- Should be equivalent to Publish in VS -->
+    <MSBuild
+      ToolsVersion="3.5"
+      Projects="$(ProjectFile)"
+      StopOnFirstFailure="true"
+      Targets="ResolveReferences;_CopyWebApplication;_BuiltWebOutputGroupOutput"
+      Properties="WarningLevel=0;DefineConstants=TRACE;Configuration=$(Configuration);Platform=AnyCPU;Optimize=true;DebugSymbols=false;OverwriteReadOnlyFiles=true;WebProjectOutputDir=$(LocalDeployment)\;OutDir=$(LocalDeployment)\bin\;DocumentationFile=;"/>
+    
+    <WriteLinesToFile
+        File="$(LocalDeployment)\Version.txt"
+        Lines="$(Version)"
+        Overwrite="true"/>
+
   </Target>
 
-  <Target Name="GitUpdate">
-    <Exec Command="git pull origin" WorkingDirectory="Blog"></Exec>
+  <Target Name="Deploy" DependsOnTargets="Builder">
+
+    <!-- Delete app data and uploads locally -->
+    <RemoveDir Directories="$(LocalDeployment)\App_Data;$(LocalDeployment)\Uploads" />
+
+    <!-- Delete everything but app data and uploads remote -->
+    <!-- Could not find  a task for this -->
+    
+    <!-- Publish files via ftp -->
+    <FtpUploadDirectoryContent
+        ServerHost="$(RemoteSite)"
+        Port="21"
+        Username="$(FtpUser)"
+        Password="$(FtpPassword)"
+        LocalDirectory="$(LocalDeployment)"
+        RemoteDirectory="test"
+        Recursive="true"
+                />
   </Target>
 
-  <Target Name="Build" DependsOnTargets="GitUpdate">
-    <MSBuild Projects="$(ProjectFile)"  />
-    <MSBuild Projects="$(TestProjectFile)" />
-  </Target>
-
-  <Target Name="Test" DependsOnTargets="Build">
+  <!--<Target Name="Test" DependsOnTargets="Build">
     <ItemGroup>
       <TestAssembly Include="$(ProjectTestDir)\bin\Debug\Blog.Tests.dll" />
     </ItemGroup>
     <Message Text="**** Test assembly: @(TestAssembly) *****"/>
     <NUnit
       Assemblies="@(TestAssembly)"
-      Toolpath="C:\Program Files (x86)\NUnit 2.5.3\bin\net-2.0\"
+      ToolPath="C:\Program Files (x86)\TestDriven.NET 2.0\NUnit\2.5\net-2.0"
       OutputXmlFile="c:\temp\unittest.xml"
       />
-  </Target>
+    
+    -->
+  <!-- Toolpath="C:\Program Files (x86)\NUnit 2.5.3\bin\net-2.0\"-->
+  <!--
+  </Target>-->
 
-  <Target Name="Deploy" DependsOnTargets="Test">
-    <Exec Command="aspnet_compiler -nologo -v / -p $(ProjectDir) -u C:\temp\build"/>
-  </Target>
 </Project>
