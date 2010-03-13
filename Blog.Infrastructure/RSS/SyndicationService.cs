@@ -23,7 +23,7 @@ namespace Blog.Infrastructure.RSS
 
         public SyndicationFeed CreateSyndicationFeed()
         {
-            var posts = _respository.List<Post>();
+            var posts = Post.GetPublishedPosts(_respository);
             var blog = _respository.List<BlogSettings>().Single();
 
             var myFeed = new SyndicationFeed
