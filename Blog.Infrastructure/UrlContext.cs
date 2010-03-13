@@ -22,7 +22,7 @@ namespace Blog.Infrastructure
         /// </summary>
         public string GetPostUrl(Post p)
         {
-            if (string.IsNullOrEmpty(p.LegacyUrl))
+            if (!string.IsNullOrEmpty(p.LegacyUrl))
                 return p.LegacyUrl;
 
             return AbsoluteUrlWithDomain("~/post/" + p.Slug);
