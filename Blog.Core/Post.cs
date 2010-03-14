@@ -70,7 +70,7 @@ namespace Blog.Core
 
         public static IQueryable<Tag> GetTags(IRepository repository)
         {
-            return repository.List<Tag>().Distinct();
+            return repository.List<Tag>().Distinct().OrderBy(x=>x.TagName);
         }
 
         public void UpdatePost(string title, string body, bool isPublished, string userName, IList<Tag> tags)

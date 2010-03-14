@@ -284,3 +284,8 @@ pre
     margin:3px;
     border-radius: .3em;
 }
+
+.tags 
+{
+    text-transform:lowercase;
+}

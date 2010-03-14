@@ -4,7 +4,7 @@ namespace Blog.Core
     {
         public Tag(string name)
         {
-            TagName = name.Trim();
+            TagName = name.Trim().ToLower();
         }
 
         public override string ToString()
