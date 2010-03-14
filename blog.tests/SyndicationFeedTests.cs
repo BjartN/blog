@@ -25,7 +25,7 @@ namespace Blog.Tests
 
             _urlContext
                 .Setup(x => x.GetPostUrl(_post))
-                .Returns("http://bjarte.com");
+                .Returns("http://bjarte.com/test");
 
             _repository
                 .Setup(x => x.List<BlogSettings>())
@@ -50,7 +50,7 @@ namespace Blog.Tests
         {
             var syndicationService = new SyndicationService(_repository.Object, _urlContext.Object);
             var syndicationItem = syndicationService.CreateSyndicationFeed().Items.First();
-            Assert.AreEqual("http://bjarte.com/", syndicationItem.BaseUri.ToString());
+            Assert.AreEqual("http://bjarte.com/test", syndicationItem.Links[0].Uri.ToString());
         }
     }
 }
