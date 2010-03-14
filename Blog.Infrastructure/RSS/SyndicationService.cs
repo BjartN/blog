@@ -36,14 +36,7 @@ namespace Blog.Infrastructure.RSS
             var feedItems = new List<SyndicationItem>();
             foreach(var p in posts)
             {
-                var item = new SyndicationItem
-                {
-                    Title = new TextSyndicationContent(p.Title),
-                    Summary = new TextSyndicationContent(p.Body),
-                    PublishDate = new DateTimeOffset(DateTime.Now),
-                    Id = p.Id,
-                    BaseUri = new Uri(_urlContext.GetPostUrl(p))
-                };
+                var item = new SyndicationItem(p.Title, p.Body, new Uri(_urlContext.GetPostUrl(p)),p.Id,p.Created);
 
                 var authInfo = new SyndicationPerson { Name = "Bjarte Djuvik Næss" };
                 item.Authors.Add(authInfo);
