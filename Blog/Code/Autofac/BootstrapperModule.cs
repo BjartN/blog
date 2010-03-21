@@ -7,7 +7,6 @@ using Autofac;
 using Blog.Core;
 using Blog.Infrastructure.Db4o;
 using Blog.Infrastructure.RSS;
-using Blog.Infrastructure.Tumblr;
 using Module=Autofac.Module;
 
 namespace Blog.Web

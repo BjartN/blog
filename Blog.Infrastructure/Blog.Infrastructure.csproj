@@ -92,10 +92,6 @@
     <Compile Include="AuthorizationService.cs" />
     <Compile Include="Db4o\PersistanceStoreException.cs" />
     <Compile Include="Db4o\Repository.cs" />
-    <Compile Include="Disqus\DisqusHttpImporter.cs" />
-    <Compile Include="Disqus\DisqusImporter.cs" />
-    <Compile Include="Disqus\DisqusThread.cs" />
-    <Compile Include="Disqus\DisqusThreads.cs" />
     <Compile Include="MetaWeblogApi\IMetaWeblog.cs" />
     <Compile Include="IUrlContext.cs" />
     <Compile Include="MetaWeblogApi\MetaWeblogHandler.cs" />
@@ -105,8 +101,6 @@
     <Compile Include="RSS\ISyndicationService.cs" />
     <Compile Include="RSS\RssHandler.cs" />
     <Compile Include="RSS\SyndicationService.cs" />
-    <Compile Include="Tumblr\TumblrImport.cs" />
-    <Compile Include="Tumblr\Post.cs" />
     <Compile Include="MetaWeblogApi\Entities\BlogInfo.cs" />
     <Compile Include="MetaWeblogApi\Entities\CategoryInfo.cs" />
     <Compile Include="MetaWeblogApi\Entities\FileData.cs" />
@@ -115,9 +109,6 @@
     <Compile Include="MetaWeblogApi\Entities\Post.cs" />
     <Compile Include="MetaWeblogApi\Entities\Source.cs" />
     <Compile Include="MetaWeblogApi\Entities\UrlData.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Disqus\threads.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Blog.Core\Blog.Core.csproj">

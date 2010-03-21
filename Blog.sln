@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Tests", "Blog.Tests\Bl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Specs", "Blog.Specs\Blog.Specs.csproj", "{A8306469-264C-455D-929E-795C05CF2A38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.ImportTumblr", "Blog.ImportTumblr\Blog.ImportTumblr.csproj", "{64097472-CB4C-4CEE-826D-259E6E34C26E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,10 +37,6 @@ Global
 		{A8306469-264C-455D-929E-795C05CF2A38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8306469-264C-455D-929E-795C05CF2A38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8306469-264C-455D-929E-795C05CF2A38}.Release|Any CPU.Build.0 = Release|Any CPU
-		{64097472-CB4C-4CEE-826D-259E6E34C26E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{64097472-CB4C-4CEE-826D-259E6E34C26E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{64097472-CB4C-4CEE-826D-259E6E34C26E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{64097472-CB4C-4CEE-826D-259E6E34C26E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Data;
-using MvcContrib;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Blog.Core;
-using Blog.Infrastructure.Tumblr;
 using Blog.Models;
 using System.Linq;
 using Post = Blog.Core.Post;

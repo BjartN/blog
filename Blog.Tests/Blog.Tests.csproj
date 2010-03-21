@@ -72,7 +72,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ImporterTests.cs" />
     <Compile Include="PostContext.cs" />
     <Compile Include="PostTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

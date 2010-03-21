@@ -58,7 +58,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Disqus\DisqusImportSpecs.cs" />
     <Compile Include="MetaWeblog\FakeUrlContext.cs" />
     <Compile Include="MetaWeblog\MetaWeblogContext.cs" />
     <Compile Include="MetaWeblog\MetaWeblogSpecs.cs" />
@@ -78,7 +77,6 @@
     <Content Include="comments.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Disqus\disqus.txt" />
     <Content Include="rssicon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
