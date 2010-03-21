@@ -45,8 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Comments\Comment.cs" />
-    <Compile Include="Comments\Thread.cs" />
     <Compile Include="IAuthenticationService.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Post.cs" />
