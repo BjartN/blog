@@ -34,7 +34,8 @@ namespace Blog.Core
 
         public static Post GetPostForDisplay(IRepository repository, string id)
         {
-            return repository.List<Post>().Where(x => x.IsPublished && x.Id.ToLower() == id.ToLower()).SingleOrDefault();
+            return repository.Get<Post>(id);
+            //return repository.List<Post>().Where(x => x.IsPublished && x.Id.ToLower() == id.ToLower()).SingleOrDefault();
         }
 
         public static IQueryable<Post> GetArchive(IRepository repository)
