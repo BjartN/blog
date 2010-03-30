@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace Blog.Infrastructure.Db4o
+namespace Blog.Infrastructure
 {
     public class PersistanceStoreException : Exception
     {

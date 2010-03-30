@@ -55,6 +55,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependencies\Elmah.dll</HintPath>
     </Reference>
+    <Reference Include="Norm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Norm\Norm.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=2.4.6.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependencies\nunit.framework.dll</HintPath>
@@ -90,11 +94,12 @@
   <ItemGroup>
     <Compile Include="AuthenticationService.cs" />
     <Compile Include="AuthorizationService.cs" />
-    <Compile Include="Db4o\PersistanceStoreException.cs" />
+    <Compile Include="PersistanceStoreException.cs" />
     <Compile Include="Db4o\Repository.cs" />
     <Compile Include="MetaWeblogApi\IMetaWeblog.cs" />
     <Compile Include="IUrlContext.cs" />
     <Compile Include="MetaWeblogApi\MetaWeblogHandler.cs" />
+    <Compile Include="Mongo\MongoRepository.cs" />
     <Compile Include="UrlContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RSS\RssActionResult.cs" />

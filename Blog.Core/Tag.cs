@@ -2,6 +2,8 @@ namespace Blog.Core
 {
     public class Tag
     {
+        public Tag(){}
+
         public Tag(string name)
         {
             TagName = name.Trim().ToLower();
@@ -22,6 +24,6 @@ namespace Blog.Core
             return TagName.GetHashCode();
         }
 
-        public string TagName { get; private set; }
+        public string TagName { get;  set; }
     }
 }

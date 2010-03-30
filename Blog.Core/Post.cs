@@ -26,9 +26,10 @@ namespace Blog.Core
 
         public static IQueryable<Post> GetPublishedPosts(IRepository repository)
         {
+            //TODO: Pulling every single post out of the db are we ?
             return repository.List<Post>()
-                .Where(x=>x.IsPublished)
-                .OrderByDescending(x => x.Created);
+                .Where(x => x.IsPublished).ToList()
+                .OrderByDescending(x => x.Created).AsQueryable();
         }
 
         public static Post GetPostForDisplay(IRepository repository, string id)
@@ -52,6 +53,11 @@ namespace Blog.Core
                 .Where(x=>x.Slug == slug.ToLower()).SingleOrDefault();
         }
 
+        public void SetTags(IList<Tag> tags)
+        {
+            Tags = tags;
+        }
+
         public static void Save(Post post, IRepository repository)
         {
             repository.Save(post);
@@ -59,7 +65,7 @@ namespace Blog.Core
 
         public static Post GetPost(string id, IRepository repository)
         {
-            return repository.List<Post>().Where(x => x.Id == id).FirstOrDefault();
+            return repository.Get<Post>(id);
         }
 
         public static void Delete(string id, IRepository repository)
@@ -70,7 +76,14 @@ namespace Blog.Core
 
         public static IQueryable<Tag> GetTags(IRepository repository)
         {
-            return repository.List<Tag>().Distinct().OrderBy(x=>x.TagName);
+            //TODO: Pulling every single post out of the db are we ?
+            var posts = repository.List<Post>().ToList();
+            var tags = new List<Tag>();
+            foreach(var post in posts)
+            {
+                tags = tags.Union(post.Tags).Distinct().ToList();
+            }
+            return tags.AsQueryable();
         }
 
         public void UpdatePost(string title, string body, bool isPublished, string userName, IList<Tag> tags)

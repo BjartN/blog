@@ -1,8 +1,6 @@
-using System;
-using System.IO;
 using Blog.Core;
-using Blog.Infrastructure.Db4o;
 using NUnit.Framework;
+using Blog.Infrastructure.MongoDb;
 
 namespace Blog.Specs
 {
@@ -15,11 +13,13 @@ namespace Blog.Specs
         [SetUp]
         public virtual void setup()
         {
-            var file = Path.Combine(Directory.GetCurrentDirectory(), "db.yap");
-            if (File.Exists(file))
-                File.Delete(file);
+            var mongoRepository = new MongoRepository("blogspecs");
+            mongoRepository.DeleteCollection<BlogSettings>();
+            mongoRepository.DeleteCollection<Post>();
 
-            _repository = new Repository(file);
+            _repository = mongoRepository;
+
+
             _blog = new BlogSettings
             {
                 VirtualMediaPath = ""
@@ -38,7 +38,7 @@ namespace Blog.Specs
         [TearDown]
         public void teardown()
         {
-            ((Repository)_repository).Dispose();
+            ((MongoRepository)_repository).Dispose();
         }
     }
 

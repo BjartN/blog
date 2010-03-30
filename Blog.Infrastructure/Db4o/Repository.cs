@@ -37,6 +37,11 @@ namespace Blog.Infrastructure.Db4o
             _db.Delete(obj);
         }
 
+        public T Get<T>(string id)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Dispose()
         {
             _db.Dispose();

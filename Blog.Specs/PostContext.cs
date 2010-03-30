@@ -4,7 +4,7 @@ using Blog.Infrastructure.MongoDb;
 using NUnit.Framework;
 using System;
 
-namespace Blog.Tests
+namespace Blog.Specs
 {
     public class PostContext
     {

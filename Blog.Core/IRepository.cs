@@ -8,5 +8,6 @@ namespace Blog.Core
         IQueryable<T> List<T>();
         void Save<T>(T obj);
         void Delete<T>(T obj);
+        T Get<T>(string id);
     }
 }

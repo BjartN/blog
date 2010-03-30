@@ -2,12 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Web;
 using Autofac;
 using Blog.Core;
-using Blog.Infrastructure.Db4o;
 using Blog.Infrastructure.RSS;
 using Module=Autofac.Module;
+using Blog.Infrastructure.MongoDb;
 
 namespace Blog.Web
 {
@@ -18,7 +17,8 @@ namespace Blog.Web
             DefaultConvention.ApplyDefaultConvention(builder, typeof(IRepository).Assembly, typeof(ISyndicationService).Assembly);
 
             builder
-                .Register(x => new Repository(HttpContext.Current.Server.MapPath("~/App_Data/Db4o.yap")))
+                //.Register(x => new Repository(HttpContext.Current.Server.MapPath("~/App_Data/Db4o.yap")))
+                .Register(x=> new MongoRepository("blog"))
                 .As <IRepository>()
                 .SingleInstance();
         }

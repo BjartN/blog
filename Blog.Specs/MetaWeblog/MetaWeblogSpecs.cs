@@ -2,6 +2,7 @@
 using Blog.Infrastructure.MetaWeblogApi.Entities;
 using NUnit.Framework;
 using System.IO;
+using Blog.Infrastructure.MongoDb;
 
 namespace Blog.Specs.MetaWeblog
 {
@@ -62,6 +63,22 @@ namespace Blog.Specs.MetaWeblog
             Assert.AreEqual(inputPost.userid, newPost.userid);
             Assert.AreEqual(inputPost.title, newPost.title);
             Assert.AreEqual(inputPost.description, newPost.description);
+        }
+
+        [Test]
+        public void strangeFail()
+        {
+            var r = (MongoRepository) _repository;
+
+            var p2 = new Blog.Core.Post();
+
+            r.Save(new Blog.Core.Post());
+            r.Save(p2);
+            r.Save(new Blog.Core.Post());
+
+            var newP2 = r.Get<Blog.Core.Post>(p2.Id);
+
+            Assert.AreEqual(newP2.Id,p2.Id);
         }
     }
 }
