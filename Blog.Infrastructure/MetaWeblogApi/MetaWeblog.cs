@@ -44,7 +44,14 @@ namespace Blog.Infrastructure.MetaWeblogApi
 
         public CategoryInfo[] GetCategories(string blogid, string username, string password)
         {
-            return Core.Post.GetTags(_repository).Select(x => new CategoryInfo { title = x.TagName, description = x.TagName, categoryid = x.TagName, htmlUrl = "http://bjarte.com", rssUrl = "http://bjarte.com/rss" }).ToArray();
+            return Core.Post.GetTags(_repository).Select(x => new CategoryInfo
+            {
+                title = x.TagName, 
+                description = x.TagName, 
+                categoryid = x.TagName, 
+                htmlUrl = "http://bjarte.com", 
+                rssUrl = "http://bjarte.com/rss"
+            }).ToArray();
         }
 
         public Post GetPost(string postid, string username, string password)

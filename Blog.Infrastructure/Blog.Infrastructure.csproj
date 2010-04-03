@@ -95,7 +95,6 @@
     <Compile Include="AuthenticationService.cs" />
     <Compile Include="AuthorizationService.cs" />
     <Compile Include="PersistanceStoreException.cs" />
-    <Compile Include="Db4o\Repository.cs" />
     <Compile Include="MetaWeblogApi\IMetaWeblog.cs" />
     <Compile Include="IUrlContext.cs" />
     <Compile Include="MetaWeblogApi\MetaWeblogHandler.cs" />

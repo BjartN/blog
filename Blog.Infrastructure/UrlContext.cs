@@ -17,15 +17,23 @@ namespace Blog.Infrastructure
             return HttpContext.Current.Server.MapPath(virtualUrl);
         }
 
-        /// <summary>
-        ///  This is duplicated logic. Should be fixed somehow.
-        /// </summary>
         public string GetPostUrl(Post p)
         {
             if (!string.IsNullOrEmpty(p.LegacyUrl))
-                return p.LegacyUrl;
+                return p.LegacyUrl.ToLower();
 
             return AbsoluteUrlWithDomain("~/post/" + p.Slug);
         }
+
+        public static IUrlContext _instance = new UrlContext();
+        public static IUrlContext Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
     }
+
+
 }

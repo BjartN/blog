@@ -34,8 +34,8 @@ namespace Blog.Core
 
         public static Post GetPostForDisplay(IRepository repository, string id)
         {
-            return repository.Get<Post>(id);
-            //return repository.List<Post>().Where(x => x.IsPublished && x.Id.ToLower() == id.ToLower()).SingleOrDefault();
+            var post = repository.Get<Post>(id);
+            return post.IsPublished ? post : null;
         }
 
         public static IQueryable<Post> GetArchive(IRepository repository)
@@ -128,7 +128,6 @@ namespace Blog.Core
 
         public static string toSlug(string phrase)
         {
-           
             var str =phrase.ToLower();
 
             str = Regex.Replace(str, @"[^a-z0-9\s-]", ""); // invalid chars           

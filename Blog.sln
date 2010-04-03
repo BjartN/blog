@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Core", "Blog.Core\Blog
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Infrastructure", "Blog.Infrastructure\Blog.Infrastructure.csproj", "{D29B29ED-8DC5-44D3-AED9-9A3D35AAE974}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Tests", "Blog.Tests\Blog.Tests.csproj", "{1A3B79FB-3AF5-4384-A444-8273D6F29ADF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Specs", "Blog.Specs\Blog.Specs.csproj", "{A8306469-264C-455D-929E-795C05CF2A38}"
 EndProject
 Global
@@ -29,10 +27,6 @@ Global
 		{D29B29ED-8DC5-44D3-AED9-9A3D35AAE974}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D29B29ED-8DC5-44D3-AED9-9A3D35AAE974}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D29B29ED-8DC5-44D3-AED9-9A3D35AAE974}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1A3B79FB-3AF5-4384-A444-8273D6F29ADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A3B79FB-3AF5-4384-A444-8273D6F29ADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A3B79FB-3AF5-4384-A444-8273D6F29ADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A3B79FB-3AF5-4384-A444-8273D6F29ADF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A8306469-264C-455D-929E-795C05CF2A38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A8306469-264C-455D-929E-795C05CF2A38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8306469-264C-455D-929E-795C05CF2A38}.Release|Any CPU.ActiveCfg = Release|Any CPU

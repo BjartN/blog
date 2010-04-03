@@ -72,12 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PostContext.cs" />
-    <Compile Include="PostTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RouteHelpers.cs" />
-    <Compile Include="RoutesTest.cs" />
-    <Compile Include="SyndicationFeedTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Blog.Core\Blog.Core.csproj">
@@ -92,11 +87,6 @@
       <Project>{F0BEA76A-024C-43AE-B659-0B52A908D5A1}</Project>
       <Name>Blog.Web</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="read.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

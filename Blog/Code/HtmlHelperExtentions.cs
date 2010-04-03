@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using Blog.Core;
 using Blog.Web.Controllers;
 using Microsoft.Web.Mvc;
+using Blog.Infrastructure;
 
 namespace Blog.Web.Code
 {
@@ -12,6 +13,8 @@ namespace Blog.Web.Code
 
         public static string PostUrl(this HtmlHelper helper, Post p)
         {
+            return UrlContext.Instance.GetPostUrl(p);
+
             if (!string.IsNullOrEmpty(p.LegacyUrl))
             {
                 var url = p.LegacyUrl.ToLower();
