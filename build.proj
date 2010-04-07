@@ -5,7 +5,7 @@
   
   <PropertyGroup>
     <Configuration>Release</Configuration>
-    <ProjectDir>Blog</ProjectDir>
+    <ProjectDir>Blog.Web</ProjectDir>
     <ProjectTestDir>Blog.Tests</ProjectTestDir>
     <ProjectFile>$(ProjectDir)\Blog.Web.csproj</ProjectFile>
     <TestProjectFile>$(ProjectTestDir)\Blog.Tests.csproj</TestProjectFile>
