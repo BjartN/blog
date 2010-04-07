@@ -34,6 +34,4 @@ namespace Blog.Infrastructure
             }
         }
     }
-
-
 }

@@ -4,7 +4,7 @@ using NUnit.Framework;
 using TumblrImport;
 
 
-namespace Blog.Tests
+namespace Blog.Specs
 {
     [TestFixture]
     public class RoutesTest

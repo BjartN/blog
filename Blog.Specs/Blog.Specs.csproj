@@ -94,7 +94,7 @@
       <Project>{D29B29ED-8DC5-44D3-AED9-9A3D35AAE974}</Project>
       <Name>Blog.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Blog\Blog.Web.csproj">
+    <ProjectReference Include="..\Blog.Web\Blog.Web.csproj">
       <Project>{F0BEA76A-024C-43AE-B659-0B52A908D5A1}</Project>
       <Name>Blog.Web</Name>
     </ProjectReference>

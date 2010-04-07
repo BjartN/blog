@@ -6,7 +6,7 @@ using Moq;
 using NUnit.Framework;
 using Blog.Infrastructure.RSS;
 
-namespace Blog.Tests
+namespace Blog.Specs
 {
     [TestFixture]
     public class SyndicationFeedTests

@@ -15,7 +15,6 @@ namespace Blog.Core
 
         public DateTime Created { get; private set; }
         public string LegacyUrl { get; private set; }
-        
         public string Id { get; private set; }
         public string Title { get; private set; }
         public string Body { get; private set; }
@@ -26,7 +25,7 @@ namespace Blog.Core
 
         public static IQueryable<Post> GetPublishedPosts(IRepository repository)
         {
-            //TODO: Pulling every single post out of the db are we ?
+            //TODO: Limitation in current version of the Norm driver. Need to pull everything
             return repository.List<Post>()
                 .Where(x => x.IsPublished).ToList()
                 .OrderByDescending(x => x.Created).AsQueryable();
@@ -77,7 +76,7 @@ namespace Blog.Core
 
         public static IQueryable<Tag> GetTags(IRepository repository)
         {
-            //TODO: Pulling every single post out of the db are we ?
+            //TODO: Nasty. Need to deal with m-m relationships in some way....
             var posts = repository.List<Post>().ToList();
             var tags = new List<Tag>();
             foreach(var post in posts)

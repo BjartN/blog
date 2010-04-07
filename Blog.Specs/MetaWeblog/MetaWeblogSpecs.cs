@@ -70,13 +70,12 @@ namespace Blog.Specs.MetaWeblog
         {
             var r = (MongoRepository) _repository;
 
-            var p2 = new Blog.Core.Post();
-
-            r.Save(new Blog.Core.Post());
+            var p2 = new Core.Post();
+            r.Save(new Core.Post());
             r.Save(p2);
-            r.Save(new Blog.Core.Post());
+            r.Save(new Core.Post());
 
-            var newP2 = r.Get<Blog.Core.Post>(p2.Id);
+            var newP2 = r.Get<Core.Post>(p2.Id);
 
             Assert.AreEqual(newP2.Id,p2.Id);
         }
