@@ -2,9 +2,10 @@
 <Project DefaultTargets="Builder" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration>Release</Configuration>
+		<MsBuildPath>C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\msbuild</MsBuildPath>
   </PropertyGroup>
   <Target Name="Builder">
-		<Exec Command="msbuild blog.sln"/>
+		<Exec Command="$(MsBuildPath) blog.sln"/>
 		<!--<MSBuild ToolsVersion="4.0" Projects="Blog.sln" Properties="Configuration=$(Configuration)"/>-->
   </Target>
 </Project>
