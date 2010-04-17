@@ -12,6 +12,7 @@
     <SolutionDir>.\</SolutionDir>
     <LocalDeployment>c:\temp\build</LocalDeployment>
     <Version>$(BUILD_NUMBER)</Version>
+		<MsBuildPath>C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\msbuild</MsBuildPath>
   </PropertyGroup>
 
   <Target Name="Builder">
@@ -20,14 +21,16 @@
     <MakeDir Directories="@(LocalDeployment)" />
 
     <!-- Should be equivalent to Publish in VS -->
-    <MSBuild
+    <!--<MSBuild
       ToolsVersion="4"
       Projects="$(ProjectFile)"
       StopOnFirstFailure="true"
       Targets="ResolveReferences;_CopyWebApplication;_BuiltWebOutputGroupOutput"
-      Properties="WarningLevel=0;DefineConstants=TRACE;Configuration=$(Configuration);Platform=AnyCPU;Optimize=true;DebugSymbols=false;OverwriteReadOnlyFiles=true;WebProjectOutputDir=$(LocalDeployment)\;OutDir=$(LocalDeployment)\bin\;DocumentationFile=;"/>
-    
-    <WriteLinesToFile
+      Properties="WarningLevel=0;DefineConstants=TRACE;Configuration=$(Configuration);Platform=AnyCPU;Optimize=true;DebugSymbols=false;OverwriteReadOnlyFiles=true;WebProjectOutputDir=$(LocalDeployment)\;OutDir=$(LocalDeployment)\bin\;DocumentationFile=;"/>-->
+
+		<Exec Command="$(MsBuildPath) $(ProjectFile) /p:WarningLevel=0;DefineConstants=TRACE;Configuration=$(Configuration);Platform=AnyCPU;Optimize=true;DebugSymbols=false;OverwriteReadOnlyFiles=true;WebProjectOutputDir=$(LocalDeployment)\;OutDir=$(LocalDeployment)\bin\;DocumentationFile=;"/>
+
+		<WriteLinesToFile
         File="$(LocalDeployment)\Version.txt"
         Lines="$(Version)"
         Overwrite="true"/>
