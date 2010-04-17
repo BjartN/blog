@@ -4,6 +4,7 @@
     <Configuration>Release</Configuration>
   </PropertyGroup>
   <Target Name="Builder">
-		<MSBuild ToolsVersion="4.0" Projects="Blog.sln" Properties="Configuration=$(Configuration)"/>
+		<Exec Command="msbuild blog.sln"/>
+		<!--<MSBuild ToolsVersion="4.0" Projects="Blog.sln" Properties="Configuration=$(Configuration)"/>-->
   </Target>
 </Project>
