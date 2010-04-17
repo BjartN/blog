@@ -28,7 +28,7 @@
       Targets="ResolveReferences;_CopyWebApplication;_BuiltWebOutputGroupOutput"
       Properties="WarningLevel=0;DefineConstants=TRACE;Configuration=$(Configuration);Platform=AnyCPU;Optimize=true;DebugSymbols=false;OverwriteReadOnlyFiles=true;WebProjectOutputDir=$(LocalDeployment)\;OutDir=$(LocalDeployment)\bin\;DocumentationFile=;"/>-->
 
-		<Exec Command="$(MsBuildPath) $(ProjectFile) /p:WarningLevel=0;DefineConstants=TRACE;Configuration=$(Configuration);Platform=AnyCPU;Optimize=true;DebugSymbols=false;OverwriteReadOnlyFiles=true;WebProjectOutputDir=$(LocalDeployment)\;OutDir=$(LocalDeployment)\bin\;DocumentationFile=;"/>
+		<Exec Command="$(MsBuildPath) $(ProjectFile) /target:ResolveReferences;_CopyWebApplication;_BuiltWebOutputGroupOutput /p:WarningLevel=0;DefineConstants=TRACE;Configuration=$(Configuration);Platform=AnyCPU;Optimize=true;DebugSymbols=false;OverwriteReadOnlyFiles=true;WebProjectOutputDir=$(LocalDeployment)\;OutDir=$(LocalDeployment)\bin\;DocumentationFile=;"/>
 
 		<WriteLinesToFile
         File="$(LocalDeployment)\Version.txt"
