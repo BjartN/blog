@@ -9,6 +9,7 @@ namespace Blog.Specs
         protected IRepository _repository;
         protected Infrastructure.MetaWeblogApi.MetaWeblog _api;
         protected BlogSettings _blog;
+        protected Post _fakePost;
 
         [SetUp]
         public virtual void setup()
@@ -26,9 +27,9 @@ namespace Blog.Specs
             };
             _repository.Save(_blog);
 
-            var post = Post.CreatePost("Hello world", "", "BjartN", null);
+            _fakePost = Post.CreatePost("Hello world", "", "BjartN", null);
 
-            _repository.Save(post);
+            _repository.Save(_fakePost);
 
             _api = new  Infrastructure.MetaWeblogApi.MetaWeblog(_repository, new FakeUrlContext(),new FakeAuthenticationService());
         }

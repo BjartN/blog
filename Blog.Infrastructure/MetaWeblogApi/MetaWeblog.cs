@@ -29,6 +29,9 @@ namespace Blog.Infrastructure.MetaWeblogApi
 
             var post = Core.Post.GetPost(postid, _repository);
 
+						if (post == null)
+							throw new NoSuchPostException(null,postid);
+
             post.UpdatePost(
                 sourcePost.title,
                 sourcePost.description,
@@ -60,6 +63,9 @@ namespace Blog.Infrastructure.MetaWeblogApi
 
             var targetPost = new Post();
             var sourcePost = Core.Post.GetPost(postid, _repository);
+
+						if (sourcePost == null)
+							throw new NoSuchPostException(null, postid);
 
             targetPost.postid = sourcePost.Id;
             targetPost.dateCreated = sourcePost.Created;
