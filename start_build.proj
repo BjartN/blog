@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="StartBuild" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+		<MsBuildPath>C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\msbuild</MsBuildPath>
+  </PropertyGroup>
+  <Target Name="StartBuild">
+    <Exec Command="$(MsBuildPath) build.proj "  />
+  </Target>
+</Project>
