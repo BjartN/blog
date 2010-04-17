@@ -20,15 +20,8 @@
     <Exec Command="RD /S /Q $(LocalDeployment)"  />
     <MakeDir Directories="@(LocalDeployment)" />
 
-    <!-- Should be equivalent to Publish in VS -->
-    <!--<MSBuild
-      ToolsVersion="4"
-      Projects="$(ProjectFile)"
-      StopOnFirstFailure="true"
-      Targets="ResolveReferences;_CopyWebApplication;_BuiltWebOutputGroupOutput"
-      Properties="WarningLevel=0;DefineConstants=TRACE;Configuration=$(Configuration);Platform=AnyCPU;Optimize=true;DebugSymbols=false;OverwriteReadOnlyFiles=true;WebProjectOutputDir=$(LocalDeployment)\;OutDir=$(LocalDeployment)\bin\;DocumentationFile=;"/>-->
-
-		<Exec Command="$(MsBuildPath) $(ProjectFile) /target:ResolveReferences;_CopyWebApplication;_BuiltWebOutputGroupOutput /p:WarningLevel=0;DefineConstants=TRACE;Configuration=$(Configuration);Platform=AnyCPU;Optimize=true;DebugSymbols=false;OverwriteReadOnlyFiles=true;WebProjectOutputDir=$(LocalDeployment)\;OutDir=$(LocalDeployment)\bin\;DocumentationFile=;"/>
+		<Exec Command="$(MsBuildPath) blog.sln /p:Configuration=$(Configuration)"/>
+		<Exec Command="$(MsBuildPath) $(ProjectFile) /target:ResolveReferences;_CopyWebApplication;_BuiltWebOutputGroupOutput /p:WarningLevel=0;DefineConstants=TRACE;Configuration=$(Configuration);Platform=AnyCPU;Optimize=true;DebugSymbols=false;OverwriteReadOnlyFiles=true;WebProjectOutputDir=$(LocalDeployment)\;OutDir=$(LocalDeployment)\bin\;DocumentationFile="/>
 
 		<WriteLinesToFile
         File="$(LocalDeployment)\Version.txt"
